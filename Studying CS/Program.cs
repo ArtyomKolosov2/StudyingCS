@@ -7,6 +7,7 @@ namespace Studying_CS
         static void Main()
         {
             Part1.PartOneStart();
+            Part2.PartTwoStart();
         }
         public static void center(int amount, string msg, string symbol)
         {

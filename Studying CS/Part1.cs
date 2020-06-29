@@ -8,14 +8,14 @@ using TasksPartOne.GenericsCS;
 
 namespace Studying_CS
 {
-    static class Part1
+    public static class Part1
     {
         public static void PartOneStart()
         {
             int amount = 50;
             string splitter = "=";
 
-
+            Program.center(amount, "Start of first Part", "*");
             Program.center(amount, "Индексаторы", splitter);
             Indexator indexator = new Indexator(5, "Default");
             Console.WriteLine(indexator[3]);
@@ -114,6 +114,8 @@ namespace Studying_CS
             data1.show_id_type();
             data2.show_id_type();
 
+            Program.center(amount, "End of first Part", "*");
+            Console.Write("Press Any Key to Continue...\n\n");
             Console.ReadKey();
         }
         

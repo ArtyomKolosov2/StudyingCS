@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Studying CS", "Studying CS\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TasksPartOne", "Tasks\TasksPartOne.csproj", "{C0E81554-B44E-418B-B25F-4793E0EFA2EB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TasksPartTwo", "TasksPartTwo\TasksPartTwo.csproj", "{01A338DF-91B9-43F5-8466-D5837F1A3A0E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{C0E81554-B44E-418B-B25F-4793E0EFA2EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C0E81554-B44E-418B-B25F-4793E0EFA2EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C0E81554-B44E-418B-B25F-4793E0EFA2EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01A338DF-91B9-43F5-8466-D5837F1A3A0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01A338DF-91B9-43F5-8466-D5837F1A3A0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01A338DF-91B9-43F5-8466-D5837F1A3A0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01A338DF-91B9-43F5-8466-D5837F1A3A0E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
