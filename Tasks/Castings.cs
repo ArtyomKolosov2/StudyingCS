@@ -17,7 +17,7 @@ namespace Tasks
         public class Car
         {
             protected int Power { get; set; }
-            protected int Cost { get; set; }
+            public int Cost { get; set; }
             protected string Name { get; set; }
 
             public Car(int power, int cost, string name)

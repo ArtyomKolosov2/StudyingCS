@@ -2,6 +2,9 @@
 using Tasks.indexer;
 using Tasks.Operatorss;
 using Tasks.DiffCastings;
+using Tasks.OversRiders;
+using Tasks.Shadowing;
+using Tasks.GenericsCS;
 namespace Studying_CS
 {
     class Program
@@ -43,7 +46,7 @@ namespace Studying_CS
             try
             {
                 Car truckcar = truck;
-                Bus newbus =  cartruck as Bus;
+                Bus newbus = cartruck as Bus;
                 if (carbus is Bus bus1)
                 {
                     Console.WriteLine(bus1.get_info());
@@ -77,6 +80,38 @@ namespace Studying_CS
 
             center(amount, "Переопределение, сокрытие", splitter);
 
+            BaseClassOver baseClassOver = new NewClassOver();
+            NewClassOver newClassOver = new NewClassOver();
+
+            baseClassOver.Show(); // !!!
+            newClassOver.Show(); // !!!
+
+            BaseEx baseEx = new NewEx("ArtyomK", "Kolosov"); // !!!
+            baseEx.Show(); // !!!
+            NewEx newEx = new NewEx("ArtyomK", "Kolosov");
+            newEx.Show();
+
+            center(amount, "Generics", splitter);
+
+            Truck truck1 = new Truck(1000, 25000, 1000);
+            Bus bus2 = new Bus(500, 30000, 50);
+
+            Shop<Car> shop = new Shop<Car>();
+
+            shop.add_one_car(truck1);
+            shop.add_one_car(bus2);
+
+            shop.sell_one_car();
+            shop.sell_one_car();
+
+            shop.show_selled_info();
+
+            Data<int> data1 = new Data<int>() { Id = 50 };
+
+            Data<string> data2 = new Data<string>() { Id = "StringType" };
+
+            data1.show_id_type();
+            data2.show_id_type();
 
             Console.ReadKey();
         }
