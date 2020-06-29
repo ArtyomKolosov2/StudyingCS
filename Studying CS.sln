@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29519.181
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Studying CS", "Studying CS\Studying CS.csproj", "{B92FC668-4465-46DE-B875-BA769C396C21}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Studying CS", "Studying CS\Studying CS.csproj", "{B92FC668-4465-46DE-B875-BA769C396C21}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tasks", "Tasks\Tasks.csproj", "{C0E81554-B44E-418B-B25F-4793E0EFA2EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TasksPartOne", "Tasks\TasksPartOne.csproj", "{C0E81554-B44E-418B-B25F-4793E0EFA2EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
