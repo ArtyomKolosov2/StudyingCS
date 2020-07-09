@@ -55,6 +55,13 @@ namespace Studying_CS
             state.RegisterState(ShowStateRed);
             state.DoTheThing();
             /////////////////////////////////////////////
+            Program.center(amount, "Using of AnonimMethods", splitter);
+            AnonimMethods anonim = new AnonimMethods();
+            anonim.StartExample();
+            /////////////////////////////////////////////
+            LambdaFunctions lambda = new LambdaFunctions();
+            lambda.Start();
+            /////////////////////////////////////////////
             Program.center(amount, "The End of The Second Part", "*");
         }
     }

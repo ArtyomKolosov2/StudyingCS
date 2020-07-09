@@ -6,6 +6,120 @@ namespace TasksPartTwo
 {
     namespace StudyDelegates
     {
+        public class LambdaFunctions
+        {
+            private delegate int OperationMulti(int x, int y);
+
+            private delegate int Square(int x);
+
+            private delegate void ShowSmt();
+
+            private delegate void RefHandler(ref int x);
+
+            private delegate void ShowHandler();
+
+            private delegate bool IsCondition(int num);
+
+            public void Start()
+            {
+                int refx = 0;
+                Square square = x => x * x;
+                OperationMulti multi = (x, y) => x * y;
+                ShowSmt show = () => Console.WriteLine("Lambda Without Arguments!");
+                RefHandler refHandler = (ref int x) => x += 5;
+                ShowHandler showHandler = () => ShowMessage();
+                
+
+                Console.WriteLine(multi(5, 5).ToString());
+                Console.WriteLine(square(10).ToString());
+                show();
+                refHandler(ref refx);
+                Console.WriteLine($"Refx = {refx}");
+                showHandler();
+
+                int[] Array = new int[] {5, 6, 3, 5, 1, 10, 10 };
+                IsCondition condition = (int x) => x > 5;
+                SumArrayNumbers(Array, condition);
+            }
+
+            private void SumArrayNumbers(int[] array, IsCondition condition)
+            {
+                int sum = 0;
+                foreach (int num in array)
+                {
+                    if (condition(num))
+                    {
+                        sum += num;
+                    }
+                }
+                Console.WriteLine($"Sum with bool expression x > 5 = {sum}");
+            }
+
+            private void ShowMessage()
+            {
+                Console.WriteLine("Hello from lambda!!!");
+            }
+        }
+        public class AnonimMethods
+        {
+            public delegate void ShowDelegate(string mes);
+
+            public delegate int SumHandler(int x, int y);
+
+            public ShowDelegate ShowOne { get; set; } 
+            public ShowDelegate ShowTwo { get; set; } 
+
+            public SumHandler SumOne { get; private set; }
+            public SumHandler SumTwo { get; private set; }
+
+
+            public void StartExample()
+            {
+                ShowOne = delegate(string message)
+                { 
+                    Console.BackgroundColor = ConsoleColor.Red;
+                    Console.WriteLine(message);
+                    Console.BackgroundColor = ConsoleColor.White;
+                };
+                ShowMessage("Hello from first anonim example!", ShowOne);
+                ShowMessage("Hello from second anonim example!", ShowTwo = delegate (string message) // Объявление непосредственно перед
+                // передачей в метод
+                {
+                    Console.BackgroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine(message);
+                    Console.BackgroundColor = ConsoleColor.White;
+                });
+                ShowSum("Third function (returns int)", delegate (int x, int y) 
+                {
+                    return x + y;
+                });
+                ShowMessage("ExampleNumberFour", delegate 
+                {
+                    Console.WriteLine("Nice One!");
+                });
+
+                SumTwo = delegate (int x, int y) 
+                {
+                    Console.WriteLine("SumTwo anonim");
+                    return x + y;
+                };
+
+                SumTwo(5, 10);
+            }
+
+            private void ShowMessage(string message, ShowDelegate show)
+            {
+                show(message);
+            }
+
+            private void ShowSum(string message, SumHandler show)
+            {
+                Console.Write(message + " ");
+                Console.WriteLine(show(5, 5));
+            }
+
+        }
+        // The End of Anonim Methods part
         internal class Example
         {
             public void ShowDelMessage()
