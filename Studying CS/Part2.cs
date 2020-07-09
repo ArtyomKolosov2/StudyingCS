@@ -1,6 +1,7 @@
 ﻿using System;
 using TasksPartTwo.TryCatchFinally;
 using TasksPartTwo.StudyDelegates;
+using TasksPartTwo.StudyEvents;
 
 namespace Studying_CS
 {
@@ -61,6 +62,9 @@ namespace Studying_CS
             /////////////////////////////////////////////
             LambdaFunctions lambda = new LambdaFunctions();
             lambda.Start();
+            /////////////////////////////////////////////
+            Program.center(amount, "Using of Events", splitter);
+            EventMain.MainEventExample();
             /////////////////////////////////////////////
             Program.center(amount, "The End of The Second Part", "*");
         }
