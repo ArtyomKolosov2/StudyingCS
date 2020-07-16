@@ -24,8 +24,8 @@ namespace TasksPartTwo
         }
         public interface IMovable
         {
-            public void Move();
-            public bool IsMoved();
+            void Move();
+            bool IsMoved();
         }
 
         public class Car : IMovable

@@ -3,8 +3,8 @@ using TasksPartTwo.TryCatchFinally;
 using TasksPartTwo.StudyDelegates;
 using TasksPartTwo.StudyEvents;
 using TasksPartTwo.StudyDelegates.StudyCovariance;
+using TasksPartTwo.StudyInterfaces;
 using TasksPartTwo.StudyDelegates.MainCSDelegates;
-using TasksPartTwo.;
 
 namespace Studying_CS
 {
@@ -77,7 +77,7 @@ namespace Studying_CS
             ActionDel.StartExample();
             /////////////////////////////////////////////
             Program.center(amount, "Interfaces", splitter);
-          
+            Interfaces.StartExample();
             /////////////////////////////////////////////
             Program.center(amount, "The End of The Second Part", "*");
         }
