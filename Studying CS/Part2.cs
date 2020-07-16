@@ -2,6 +2,9 @@
 using TasksPartTwo.TryCatchFinally;
 using TasksPartTwo.StudyDelegates;
 using TasksPartTwo.StudyEvents;
+using TasksPartTwo.StudyDelegates.StudyCovariance;
+using TasksPartTwo.StudyDelegates.MainCSDelegates;
+using TasksPartTwo.;
 
 namespace Studying_CS
 {
@@ -65,6 +68,16 @@ namespace Studying_CS
             /////////////////////////////////////////////
             Program.center(amount, "Using of Events", splitter);
             EventMain.MainEventExample();
+            /////////////////////////////////////////////
+            Program.center(amount, "Covariance and ContrCovariance", splitter);
+            StudyCovariance covariance = new StudyCovariance();
+            covariance.StartExample();
+            /////////////////////////////////////////////
+            Program.center(amount, "Delegates Action, Predicate, Func", splitter);
+            ActionDel.StartExample();
+            /////////////////////////////////////////////
+            Program.center(amount, "Interfaces", splitter);
+          
             /////////////////////////////////////////////
             Program.center(amount, "The End of The Second Part", "*");
         }
