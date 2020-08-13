@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TasksPartOne", "Tasks\Tasks
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TasksPartTwo", "TasksPartTwo\TasksPartTwo.csproj", "{01A338DF-91B9-43F5-8466-D5837F1A3A0E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TasksPartThree", "TasksPartThree\TasksPartThree.csproj", "{BD201346-195D-47E6-BF36-37FF1C7CCF1F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TasksPartThree", "TasksPartThree\TasksPartThree.csproj", "{BD201346-195D-47E6-BF36-37FF1C7CCF1F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

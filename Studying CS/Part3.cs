@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using TasksPartThree.StudyExtinsions;
 using TasksPartThree.StudyPartial;
+using TasksPartThree.StudyAnonymous;
+using TasksPartThree.LocalFunctionsStudy;
+using TasksPartThree.StudyDeconstruction;
 
 namespace Studying_CS
 {
@@ -20,6 +23,15 @@ namespace Studying_CS
             //////////////////////////////////////////////
             Program.center(amount, "Partial methods and classes", splitter);
             StartPartial.StartExample();
+            //////////////////////////////////////////////
+            Program.center(amount, "Anon types", splitter);
+            AnonoimoysTypes.StartExample();
+            //////////////////////////////////////////////
+            Program.center(amount, "Local functions", splitter);
+            LocalFunctions.StartExample();
+            //////////////////////////////////////////////
+            Program.center(amount, "Deconstruction for beginers", splitter);
+            Deconstruction.StartExample();
             //////////////////////////////////////////////
         }
     }
