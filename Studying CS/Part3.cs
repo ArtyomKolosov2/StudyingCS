@@ -6,6 +6,7 @@ using TasksPartThree.StudyPartial;
 using TasksPartThree.StudyAnonymous;
 using TasksPartThree.LocalFunctionsStudy;
 using TasksPartThree.StudyDeconstruction;
+using TasksPartThree.StudyPatternMacthing;
 
 namespace Studying_CS
 {
@@ -32,6 +33,9 @@ namespace Studying_CS
             //////////////////////////////////////////////
             Program.center(amount, "Deconstruction for beginers", splitter);
             Deconstruction.StartExample();
+            //////////////////////////////////////////////
+            Program.center(amount, "Pattern matching", splitter);
+            PatternMatching.StartExample();
             //////////////////////////////////////////////
         }
     }
