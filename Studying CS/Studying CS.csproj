@@ -7,9 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TasksPartThree\TasksPartThree.csproj" />
-    <ProjectReference Include="..\TasksPartTwo\TasksPartTwo.csproj" />
-    <ProjectReference Include="..\Tasks\TasksPartOne.csproj" />
+    <Folder Include="TasksPartOne\" />
+    <Folder Include="TasksPartTwo\" />
+    <Folder Include="TasksPartThree\" />
   </ItemGroup>
 
 </Project>
