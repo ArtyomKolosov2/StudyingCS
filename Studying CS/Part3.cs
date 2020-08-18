@@ -35,7 +35,7 @@ namespace Studying_CS
             Deconstruction.StartExample();
             //////////////////////////////////////////////
             Program.center(amount, "Pattern matching", splitter);
-            PatternMatching.StartExample();
+            PatternMatching.StartExample();///
             //////////////////////////////////////////////
         }
     }
