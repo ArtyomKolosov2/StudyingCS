@@ -7,6 +7,8 @@ using TasksPartThree.StudyAnonymous;
 using TasksPartThree.LocalFunctionsStudy;
 using TasksPartThree.StudyDeconstruction;
 using TasksPartThree.StudyPatternMacthing;
+using TasksPartThree.NullableTypes;
+using TasksPartThree.ReferenceVars;
 
 namespace Studying_CS
 {
@@ -36,6 +38,12 @@ namespace Studying_CS
             //////////////////////////////////////////////
             Program.center(amount, "Pattern matching", splitter);
             PatternMatching.StartExample();////
+            //////////////////////////////////////////////
+            Program.center(amount, "Nullable Types", splitter);
+            NullableTypes.StartExample();
+            //////////////////////////////////////////////
+            Program.center(amount, "Reference vars", splitter);
+            ReferenceVars.StartExample();
             //////////////////////////////////////////////
         }
     }

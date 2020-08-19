@@ -6,7 +6,7 @@ namespace Studying_CS
     {
         static void Main()
         {
-            int partAmount = 3;
+            int partAmount = 4;
             string Command;
             Console.WriteLine($"Choose part (1-{partAmount.ToString()}):");
             Command = Console.ReadLine();
@@ -20,6 +20,9 @@ namespace Studying_CS
                     break;
                 case "3":
                     Part3.PartThreeStart();
+                    break;
+                case "4":
+                    Part4.PartFourStart();
                     break;
                 default:
                     Console.WriteLine("Error: Incorrect Part!");
