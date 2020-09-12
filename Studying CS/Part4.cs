@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using TaskPartFour.IEnumerableStudy;
+using TaskPartFour.YieldStudy;
 
 namespace Studying_CS
 {
@@ -16,6 +17,9 @@ namespace Studying_CS
             //////////////////////////////////////////////
             Program.center(amount, "IEnumerable and IEnumerator", splitter);
             IEnumerableStudy.StartExample();
+            //////////////////////////////////////////////
+            Program.center(amount, "Yield keyword", splitter);
+            YieldKeyword.StartExample();
             //////////////////////////////////////////////
         }
     }

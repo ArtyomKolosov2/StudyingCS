@@ -154,8 +154,8 @@ namespace TaskPartFour.LinkedListStudyCS
             return new LinkedListEnumerator<T>(this);
         }
     }
-    public class Node<T>
-    {
+    public class Node<T> 
+    { 
         public T Value { get; set; }
         public Node<T> Next { get; set; } = null;
         public Node(T value)

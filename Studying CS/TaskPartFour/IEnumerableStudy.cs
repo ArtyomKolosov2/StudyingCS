@@ -25,6 +25,13 @@ namespace TaskPartFour.IEnumerableStudy
             Console.WriteLine(listStudy[3]);
             listStudy.Print();
             PrintCollection(listStudy);
+
+            LinkedListStudy<int> linkedList = new LinkedListStudy<int>();
+            linkedList.AddAtFront(1);
+            linkedList.AddAtFront(2);
+            linkedList.AddAtFront(3);
+            linkedList.AddAtFront(4);
+            PrintCollection(linkedList);
         }
 
         public static void PrintCollection<T>(T collection) where T: IEnumerable
