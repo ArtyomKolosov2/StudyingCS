@@ -15,7 +15,7 @@ namespace TaskPartFour.YieldStudy
                 Console.WriteLine($"Take Time = {book.TakeDate.ToString("HH:mm:ss")} Name = {book.Name}");
             }
             foreach (Person person in library.GetPerson())
-            {
+            { 
                 Console.WriteLine($"Name = {person.Name}, Age = {person.Age.ToString()}");
             }
         }
