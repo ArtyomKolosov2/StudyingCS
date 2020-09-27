@@ -6,6 +6,7 @@ using TaskPartFour.IEnumerableStudy;
 using TaskPartFour.YieldStudy;
 using TaskPartFour.LazyStudy;
 using TaskPartFour.SpanStudy;
+using TaskPartFour.ThreadStudy;
 
 namespace Studying_CS
 {
@@ -25,9 +26,13 @@ namespace Studying_CS
             //////////////////////////////////////////////
             Program.center(amount, "Lazy loading", splitter);
             LazyInit.StartExample(); // You can place breakpoint to see difference in memory concumed
-            //////////////////////////////////////////////
+            //////////////////////////////////////////////          
             Program.center(amount, "Spans", splitter);
             SpanStudy.StartExample();
+            //////////////////////////////////////////////
+            Program.center(amount, "Threads", splitter);
+            ThreadsStudy.StartExample();
+
         }
     }
 
