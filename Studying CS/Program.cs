@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Studying_CS.Reflection;
+using System;
 
 namespace Studying_CS
 {
@@ -23,6 +24,9 @@ namespace Studying_CS
                     break;
                 case "4":
                     Part4.PartFourStart();
+                    break;
+                case "5":
+                    ReflectionStudyClass.StartExample();
                     break;
                 default:
                     Console.WriteLine("Error: Incorrect Part!");
