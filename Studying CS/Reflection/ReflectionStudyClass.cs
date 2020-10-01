@@ -31,6 +31,23 @@ namespace Studying_CS.Reflection
                 Console.WriteLine($"Field = {field?.Name}, Type = {field.FieldType.Name}, Value = {field.GetValue(testInstance)?.ToString()}");
             }
             Program.print_splitter(amount, splitter);
+            var methods = myType.GetMethods(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public);
+            foreach (var method in methods)
+            {
+                Console.Write($"{method.ReturnType} {method.Name}(");
+                var parametres = method.GetParameters();
+                for (int i = 0; i < parametres.Length; i++)
+                {
+                    Console.Write($"{parametres[i].ParameterType} {parametres[i].Name}");
+                    if (i+1 < parametres.Length)
+                    {
+                        Console.Write(',');
+                    }
+                }
+                Console.Write(")\n");
+            }
+            Program.print_splitter(amount, splitter);
+
 
         }
     }
