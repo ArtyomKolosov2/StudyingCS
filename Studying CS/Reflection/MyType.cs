@@ -4,7 +4,16 @@ using System.Text;
 
 namespace Studying_CS.Reflection
 {
-    public class MyType
+    public interface IMyTextValue
+    {
+        string Text { get; set; }
+    }
+
+    public class MyTypeParent
+    {
+        public string ParentText { get; set; } = "ParentText";
+    }
+    public class MyType : MyTypeParent, IMyTextValue
     {
         private int _someNumber;
         public string Text { get; set; }

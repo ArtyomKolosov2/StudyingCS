@@ -7,7 +7,7 @@ namespace Studying_CS
     {
         static void Main()
         {
-            int partAmount = 4;
+            int partAmount = 5;
             string Command;
             Console.WriteLine($"Choose part (1-{partAmount.ToString()}):");
             Command = Console.ReadLine();
