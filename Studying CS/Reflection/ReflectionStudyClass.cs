@@ -47,8 +47,24 @@ namespace Studying_CS.Reflection
                 Console.Write(")\n");
             }
             Program.print_splitter(amount, splitter);
+            Assembly assembly = Assembly.LoadFrom(@"C:\Users\User\source\repos\Studying CS\Studying CS\Reflection\TestAssembly.dll");
+            Console.WriteLine(assembly.FullName);
+            Type[] types = assembly.GetTypes();
+            foreach (var type in types)
+            {
+                Console.WriteLine(type);
+            }
+            Type programType = assembly.GetType("TestAssembly.Program");
+            object pr = Activator.CreateInstance(programType);
+            MethodInfo methodInfo = programType.GetMethod("DoSmt2");
+            methodInfo?.Invoke(pr, null);
 
-
+            Assembly thAsm = Assembly.LoadFrom(@"C:\Users\User\source\repos\Studying CS\Studying CS\Reflection\TestThreadAsm.dll");
+            Console.WriteLine(thAsm.FullName);
+            Type thType = thAsm.GetType("UrokiSS.Program");
+            object type1 = Activator.CreateInstance(thType);
+            MethodInfo main = thType.GetMethod("Main", BindingFlags.DeclaredOnly | BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Static | BindingFlags.Public);
+            main?.Invoke(type1, new object[] { new string[] { } });
         }
     }
 }

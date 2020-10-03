@@ -7,8 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Reflection\TestAssembly.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="TasksPartOne\" />
     <Folder Include="TasksPartTwo\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Reflection\TestAssembly.dll">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>
