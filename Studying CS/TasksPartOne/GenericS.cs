@@ -1,6 +1,6 @@
-﻿using System;
+﻿using Studying_CS.IOservices;
+using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace TasksPartOne
 {
@@ -11,8 +11,8 @@ namespace TasksPartOne
 
             public int Income { get; private set; } = 0;
             private List<T> Cars { get; set; }
-            private List<string> info {get; set;}
-     
+            private List<string> info { get; set; }
+
             public Shop()
             {
                 Cars = new List<T>();
@@ -32,10 +32,10 @@ namespace TasksPartOne
 
             public void show_selled_info()
             {
-                Console.WriteLine("Selled cars: ");
+                ConsoleIOService.ShowUserStringWithLineBreak("Selled cars: ");
                 foreach (string str in info)
                 {
-                    Console.WriteLine(str);
+                    ConsoleIOService.ShowUserStringWithLineBreak(str);
                 }
                 Console.Write("\n");
             }
@@ -51,7 +51,7 @@ namespace TasksPartOne
 
             public void show_id_type()
             {
-                Console.WriteLine("Тип переменной Id = {0}", Id.GetType());
+                ConsoleIOService.ShowUserStringWithLineBreak(string.Format("Тип переменной Id = {0}", Id.GetType()));
             }
         }
     }

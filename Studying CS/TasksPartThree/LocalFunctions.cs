@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Studying_CS.IOservices;
 
 namespace TasksPartThree.LocalFunctionsStudy
 {
@@ -6,16 +6,16 @@ namespace TasksPartThree.LocalFunctionsStudy
     {
         public static void StartExample()
         {
-            Console.WriteLine(GetSum(5, 10));
+            ConsoleIOService.ShowUserStringWithLineBreak(GetSum(5, 10));
         }
         public static int GetSum(int x, int y)
         {
             int result = 0;
             /*static void ShowVar()
             {
-                Console.WriteLine(checkStaticVar);
+                ConsoleIOService.ShowUserStringWithLineBreak(checkStaticVar);
             }*/
-           
+
             if (IsGreater(x, 0) && IsGreater(y, 5))
             {
                 result = x + y;

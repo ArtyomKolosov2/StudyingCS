@@ -1,6 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Studying_CS.IOservices;
+using System;
 
 
 namespace TaskPartFour.LazyStudy
@@ -10,14 +9,14 @@ namespace TaskPartFour.LazyStudy
         public static void StartExample()
         {
             Lazy<School> school = new Lazy<School>();
-            Console.WriteLine("Input 1 to init lazy class and show data:");
-            if (Console.ReadLine() == "1")
+            ConsoleIOService.ShowUserStringWithLineBreak("Input 1 to init lazy class and show data:");
+            if (ConsoleIOService.GetUserString() == "1")
             {
                 school.Value.Show_People();
             }
             else
             {
-                Console.WriteLine("Init skipped!");
+                ConsoleIOService.ShowUserStringWithLineBreak("Init skipped!");
             }
         }
     }
@@ -28,7 +27,7 @@ namespace TaskPartFour.LazyStudy
         {
             foreach (var person in _people)
             {
-                Console.WriteLine(person);
+                ConsoleIOService.ShowUserStringWithLineBreak(person);
             }
         }
         public School()
@@ -55,5 +54,5 @@ namespace TaskPartFour.LazyStudy
             _person_count++;
         }
     }
-    
+
 }

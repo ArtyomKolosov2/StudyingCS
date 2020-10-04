@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Studying_CS.IOservices;
 
 namespace TasksPartOne
 {
@@ -10,7 +10,7 @@ namespace TasksPartOne
 
             public virtual void Show()
             {
-                Console.WriteLine("BaseClassShow Num = {0}", Num.ToString());
+                ConsoleIOService.ShowUserStringWithLineBreak(string.Format("BaseClassShow Num = {0}", Num.ToString()));
             }
         }
 
@@ -25,13 +25,13 @@ namespace TasksPartOne
 
             public override void Show()
             {
-                Console.WriteLine("NewClassShow Num = {0}", Num.ToString());
+                ConsoleIOService.ShowUserStringWithLineBreak(string.Format("NewClassShow Num = {0}", Num.ToString()));
             }
         }
     }
     namespace Shadowing
     {
-        public class BaseEx 
+        public class BaseEx
         {
             public string Name { get; set; } = "Artyom";
             public readonly int age = 18;
@@ -42,9 +42,9 @@ namespace TasksPartOne
             }
             public void Show()
             {
-                Console.WriteLine("BaseEx show name = {0}, age = {1}", 
-                    Name, 
-                    age);
+                ConsoleIOService.ShowUserStringWithLineBreak(string.Format("BaseEx show name = {0}, age = {1}",
+                    Name,
+                    age));
             }
         }
 
@@ -59,11 +59,11 @@ namespace TasksPartOne
 
             public new void Show()
             {
-                Console.WriteLine("NewEx show name = {0}, second name = {1}, age = {2}", 
-                    Name, 
-                    SecondName, 
+                ConsoleIOService.ShowUserStringWithLineBreak(string.Format("NewEx show name = {0}, second name = {1}, age = {2}",
+                    Name,
+                    SecondName,
                     age.ToString()
-                    );
+                    ));
             }
         }
 

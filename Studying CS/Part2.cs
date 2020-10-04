@@ -1,10 +1,11 @@
-﻿using System;
-using TasksPartTwo.TryCatchFinally;
+﻿using Studying_CS.IOservices;
+using System;
 using TasksPartTwo.StudyDelegates;
-using TasksPartTwo.StudyEvents;
-using TasksPartTwo.StudyDelegates.StudyCovariance;
-using TasksPartTwo.StudyInterfaces;
 using TasksPartTwo.StudyDelegates.MainCSDelegates;
+using TasksPartTwo.StudyDelegates.StudyCovariance;
+using TasksPartTwo.StudyEvents;
+using TasksPartTwo.StudyInterfaces;
+using TasksPartTwo.TryCatchFinally;
 
 namespace Studying_CS
 {
@@ -12,13 +13,13 @@ namespace Studying_CS
     {
         public static void ShowState(string msg, int amount)
         {
-            Console.WriteLine(msg + amount.ToString());
+            ConsoleIOService.ShowUserStringWithLineBreak(msg + amount.ToString());
         }
 
         public static void ShowStateRed(string msg, int amount)
         {
             Console.BackgroundColor = ConsoleColor.Red;
-            Console.WriteLine(msg + amount.ToString());
+            ConsoleIOService.ShowUserStringWithLineBreak(msg + amount.ToString());
             Console.BackgroundColor = ConsoleColor.White;
         }
         public static void PartTwoStart()
@@ -35,7 +36,7 @@ namespace Studying_CS
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Exception ({0}) wasnt handled because of TryFinally construction", ex.Source);
+                ConsoleIOService.ShowUserStringWithLineBreak(string.Format("Exception ({0}) wasnt handled because of TryFinally construction", ex.Source));
             }
             Program.center(amount, "ExceptionProperties", splitter);
             DiffExceptions.ExceptionProperties();

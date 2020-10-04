@@ -1,6 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Studying_CS.IOservices;
+using System;
 
 namespace TaskPartFour.SpanStudy
 {
@@ -17,14 +16,14 @@ namespace TaskPartFour.SpanStudy
             Span<int> mySpan = temperatures;
             foreach (var sp in mySpan)
             {
-                Console.WriteLine(sp);
+                ConsoleIOService.ShowUserStringWithLineBreak(sp);
             }
             Span<int> slice = mySpan.Slice(0, 10);
-            Console.WriteLine(mySpan[0]);
-            Console.WriteLine(slice[0]);
+            ConsoleIOService.ShowUserStringWithLineBreak(mySpan[0]);
+            ConsoleIOService.ShowUserStringWithLineBreak(slice[0]);
             mySpan[0] = 55555;
-            Console.WriteLine(slice[0]); // ref T this[int index] in action
+            ConsoleIOService.ShowUserStringWithLineBreak(slice[0]); // ref T this[int index] in action
         }
-        
+
     }
 }

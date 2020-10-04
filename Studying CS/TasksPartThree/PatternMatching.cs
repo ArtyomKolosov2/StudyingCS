@@ -1,6 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Studying_CS.IOservices;
+using System;
 using TasksPartThree.StudyDeconstruction;
 
 namespace TasksPartThree.StudyPatternMacthing
@@ -9,7 +8,7 @@ namespace TasksPartThree.StudyPatternMacthing
     {
         public static void StartExample()
         {
-            One first = new Two() { IsLegit=true};
+            One first = new Two() { IsLegit = true };
             Two second = new Two();
             Two third = null;
             if (first is Two two1) // If pattern mathing
@@ -23,31 +22,31 @@ namespace TasksPartThree.StudyPatternMacthing
                 case null:
                     break;
                 default:
-                    Console.WriteLine("NoPattern");
+                    ConsoleIOService.ShowUserStringWithLineBreak("NoPattern");
                     break;
 
             }
-            Console.WriteLine(GetMessage(new Human { Age = 18 }));
-            Console.WriteLine(GetMessage(new Human { Name="Artyom" }));
-            Console.WriteLine(GetMessage(new Human { SurName="Kolosov" }));
-            Console.WriteLine(GetMessage(new Human()));
+            ConsoleIOService.ShowUserStringWithLineBreak(GetMessage(new Human { Age = 18 }));
+            ConsoleIOService.ShowUserStringWithLineBreak(GetMessage(new Human { Name = "Artyom" }));
+            ConsoleIOService.ShowUserStringWithLineBreak(GetMessage(new Human { SurName = "Kolosov" }));
+            ConsoleIOService.ShowUserStringWithLineBreak(GetMessage(new Human()));
 
-            Console.WriteLine(GetOperationResult(1, 2, 2));
+            ConsoleIOService.ShowUserStringWithLineBreak(GetOperationResult(1, 2, 2));
             try
             {
-                Console.WriteLine(GetOperationResult(5, 2, 2));
+                ConsoleIOService.ShowUserStringWithLineBreak(GetOperationResult(5, 2, 2));
             }
             catch (ArgumentException ex)
             {
-                Console.WriteLine(ex.Message);
+                ConsoleIOService.ShowUserStringWithLineBreak(ex.Message);
             }
-            Console.WriteLine(GetWelcome("english", null, null));
-            Console.WriteLine(GetWelcome("rs", "morning", "sir"));
+            ConsoleIOService.ShowUserStringWithLineBreak(GetWelcome("english", null, null));
+            ConsoleIOService.ShowUserStringWithLineBreak(GetWelcome("rs", "morning", "sir"));
 
-            Console.WriteLine(GetLanguageInfo(new Language { Name = "english" }));
-            Console.WriteLine(GetLanguageInfo(new Language { Code = 2 }));
-            Console.WriteLine(GetLanguageInfo(new Language { Name="German", Code = 3 }));
-            Console.WriteLine(GetLanguageInfo(null));
+            ConsoleIOService.ShowUserStringWithLineBreak(GetLanguageInfo(new Language { Name = "english" }));
+            ConsoleIOService.ShowUserStringWithLineBreak(GetLanguageInfo(new Language { Code = 2 }));
+            ConsoleIOService.ShowUserStringWithLineBreak(GetLanguageInfo(new Language { Name = "German", Code = 3 }));
+            ConsoleIOService.ShowUserStringWithLineBreak(GetLanguageInfo(null));
         }
         // Паттерн свойств
         public static string GetMessage(Human human)
@@ -84,7 +83,7 @@ namespace TasksPartThree.StudyPatternMacthing
         //Позиционный паттерн
         public static string GetLanguageInfo(Language language) => language switch
         {
-            ("english",_) => "English Language",
+            ("english", _) => "English Language",
             (_, 2) => "Russian language",
             (var name, var code) => $"Not found name {name}, code {code}",
             null => "null"

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace TasksPartTwo.StudyInterfaces
 {
@@ -33,8 +32,8 @@ namespace TasksPartTwo.StudyInterfaces
             return new Shop
             {
                 TestGood = this.TestGood,// Поверхностоное копирование (копируем только ссылку на объект!!!)
-                ShopName = this.ShopName, 
-                Goods = newGoods 
+                ShopName = this.ShopName,
+                Goods = newGoods
             };
         }
     }

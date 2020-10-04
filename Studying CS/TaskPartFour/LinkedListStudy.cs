@@ -1,7 +1,6 @@
-﻿using System;
+﻿using Studying_CS.IOservices;
+using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Text;
 
 namespace TaskPartFour.LinkedListStudyCS
 {
@@ -57,7 +56,7 @@ namespace TaskPartFour.LinkedListStudyCS
 
         public T this[int index]
         {
-            get 
+            get
             {
                 int countIndex = 0;
                 Node<T> ptr = FirstNode;
@@ -78,7 +77,7 @@ namespace TaskPartFour.LinkedListStudyCS
                 }
                 return result;
             }
-            set 
+            set
             {
                 int countIndex = 0;
                 Node<T> ptr = FirstNode;
@@ -101,7 +100,7 @@ namespace TaskPartFour.LinkedListStudyCS
 
         public int Length
         {
-            get 
+            get
             {
                 int result = 0;
                 Node<T> ptr = FirstNode;
@@ -119,7 +118,7 @@ namespace TaskPartFour.LinkedListStudyCS
             int count = 1;
             while (ptr != null)
             {
-                Console.WriteLine($"{count.ToString()}: {ptr.Value.ToString()}");
+                ConsoleIOService.ShowUserStringWithLineBreak($"{count.ToString()}: {ptr.Value.ToString()}");
                 count++;
                 ptr = ptr.Next;
             }
@@ -154,8 +153,8 @@ namespace TaskPartFour.LinkedListStudyCS
             return new LinkedListEnumerator<T>(this);
         }
     }
-    public class Node<T> 
-    { 
+    public class Node<T>
+    {
         public T Value { get; set; }
         public Node<T> Next { get; set; } = null;
         public Node(T value)

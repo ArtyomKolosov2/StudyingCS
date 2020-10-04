@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Studying_CS.IOservices;
 
 namespace TasksPartThree.StudyDeconstruction
 {
@@ -8,13 +8,13 @@ namespace TasksPartThree.StudyDeconstruction
         {
             Language exLang = new Language { Code = 1, Name = "English" };
             (string langName, int langCode) = exLang;
-            Console.WriteLine($"Name = {langName}, code = {langCode}");
+            ConsoleIOService.ShowUserStringWithLineBreak($"Name = {langName}, code = {langCode}");
             Human exHuman = new Human { Age = 18, Name = "Artyom", SurName = "Kolosov" };
             Human exHuman2 = new Human { Age = 20, Name = "Ad", SurName = "Kol" };
             exHuman.Deconstruct(out int age, out string name, out string surName);
             (int age2, string name2, _) = exHuman2;
-            Console.WriteLine($"Age = {age}, Name = {name}, SurName = {surName}");
-            Console.WriteLine($"Age = {age2}, Name = {name2}");
+            ConsoleIOService.ShowUserStringWithLineBreak($"Age = {age}, Name = {name}, SurName = {surName}");
+            ConsoleIOService.ShowUserStringWithLineBreak($"Age = {age2}, Name = {name2}");
         }
     }
 

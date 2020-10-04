@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Text;
-using TaskPartFour.IEnumerableStudy;
-using TaskPartFour.YieldStudy;
+﻿using TaskPartFour.IEnumerableStudy;
 using TaskPartFour.LazyStudy;
 using TaskPartFour.SpanStudy;
 using TaskPartFour.ThreadStudy;
+using TaskPartFour.YieldStudy;
 
 namespace Studying_CS
 {
@@ -36,5 +32,5 @@ namespace Studying_CS
         }
     }
 
-    
+
 }

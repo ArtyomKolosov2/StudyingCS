@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Studying_CS.IOservices;
+using System;
+using TasksPartOne.DiffCastings;
+using TasksPartOne.GenericsCS;
 using TasksPartOne.indexer;
 using TasksPartOne.Operatorss;
-using TasksPartOne.DiffCastings;
 using TasksPartOne.OversRiders;
 using TasksPartOne.Shadowing;
-using TasksPartOne.GenericsCS;
 
 namespace Studying_CS
 {
@@ -18,7 +19,7 @@ namespace Studying_CS
             Program.center(amount, "Start of first Part", "*");
             Program.center(amount, "Индексаторы", splitter);
             Indexator indexator = new Indexator(5, "Default");
-            Console.WriteLine(indexator[3]);
+            ConsoleIOService.ShowUserStringWithLineBreak(indexator[3]);
             indexator.show_array();
 
             Program.center(amount, "Перегрузка операторов", splitter);
@@ -26,15 +27,15 @@ namespace Studying_CS
             OperatorReboot operatorReboot1 = new OperatorReboot(1);
             OperatorReboot operatorReboot2 = new OperatorReboot(1);
 
-            Console.WriteLine(operatorReboot1 + operatorReboot2);
-            Console.WriteLine(operatorReboot1 > operatorReboot2);
+            ConsoleIOService.ShowUserStringWithLineBreak(operatorReboot1 + operatorReboot2);
+            ConsoleIOService.ShowUserStringWithLineBreak(operatorReboot1 > operatorReboot2);
             if (operatorReboot1)
             {
-                Console.WriteLine("if (operatorReboot) {Size != 0}");
+                ConsoleIOService.ShowUserStringWithLineBreak("if (operatorReboot) {Size != 0}");
             }
             for (int i = 0; i < 10; i++, operatorReboot1++)
             {
-                Console.WriteLine(operatorReboot1);
+                ConsoleIOService.ShowUserStringWithLineBreak(operatorReboot1);
             }
 
             Program.center(amount, "Приведение типов", splitter);
@@ -50,15 +51,15 @@ namespace Studying_CS
                 Bus newbus = cartruck as Bus;
                 if (carbus is Bus bus1)
                 {
-                    Console.WriteLine(bus1.get_info());
+                    ConsoleIOService.ShowUserStringWithLineBreak(bus1.get_info());
                 }
                 else
                 {
-                    Console.WriteLine("Not This Type!");
+                    ConsoleIOService.ShowUserStringWithLineBreak("Not This Type!");
                 }
                 if (newbus == null)
                 {
-                    Console.WriteLine("Invalid Operation!");
+                    ConsoleIOService.ShowUserStringWithLineBreak("Invalid Operation!");
                 }
                 //B obj1 = new A(); // Выдаёт ошибку
                 //obj1.Foo();
@@ -70,13 +71,13 @@ namespace Studying_CS
                 obj3.Foo();
 
                 Car new_car_ref = (Car)refernce;
-                Console.WriteLine(new_car_ref.get_info());
+                ConsoleIOService.ShowUserStringWithLineBreak(new_car_ref.get_info());
                 refernce = (Truck)refernce;
 
             }
             catch (InvalidCastException e)
             {
-                Console.WriteLine(e.Message);
+                ConsoleIOService.ShowUserStringWithLineBreak(e.Message);
             }
 
             Program.center(amount, "Переопределение, сокрытие", splitter);
@@ -118,7 +119,7 @@ namespace Studying_CS
             Console.Write("Press Any Key to Continue...\n\n");
             Console.ReadKey();
         }
-        
+
     }
 
 }

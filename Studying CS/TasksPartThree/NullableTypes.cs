@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Studying_CS.IOservices;
+using System;
 using System.Drawing;
-using System.Text;
 
 namespace TasksPartThree.NullableTypes
 {
@@ -14,14 +13,14 @@ namespace TasksPartThree.NullableTypes
             Nullable<bool> Flag = true;
             if (z == null)
             {
-                Console.WriteLine("z == null");
+                ConsoleIOService.ShowUserStringWithLineBreak("z == null");
             }
             z = 50;
             if (z.HasValue && Flag.Value)
             {
-                Console.WriteLine($"z = {z.Value}, Flag = true");
+                ConsoleIOService.ShowUserStringWithLineBreak($"z = {z.Value}, Flag = true");
             }
-            Console.WriteLine(color.GetValueOrDefault(Color.Red));
+            ConsoleIOService.ShowUserStringWithLineBreak(color.GetValueOrDefault(Color.Red));
         }
     }
 }

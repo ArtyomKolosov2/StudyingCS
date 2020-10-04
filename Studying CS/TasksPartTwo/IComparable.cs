@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace TasksPartTwo.StudyInterfaces
 {
     public class IComparableStudy
     {
-        public Human[] HumansOne = new Human[] 
+        public Human[] HumansOne = new Human[]
         {
             new Human{Age=15,Name="Vasya"},
             new Human{Age=29,Name="Petya"},
@@ -28,7 +27,7 @@ namespace TasksPartTwo.StudyInterfaces
             }
             Console.Write("\n");
         }
-        
+
     }
 
     public class Human : IComparable<Human>

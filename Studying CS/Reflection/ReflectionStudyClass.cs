@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Studying_CS.IOservices;
+using System;
 using System.Reflection;
 
 namespace Studying_CS.Reflection
 {
-   
+
     public static class ReflectionStudyClass
     {
         public static void StartExample()
@@ -13,22 +12,22 @@ namespace Studying_CS.Reflection
             int amount = 50;
             string splitter = "=";
             MyType testInstance = new MyType(100);
-            Console.WriteLine(typeof(MyType));
-            Console.WriteLine(Type.GetType("Studying_CS.Reflection.MyType", true, false)) ;
-            Console.WriteLine(testInstance.GetType());
+            ConsoleIOService.ShowUserStringWithLineBreak(typeof(MyType));
+            ConsoleIOService.ShowUserStringWithLineBreak(Type.GetType("Studying_CS.Reflection.MyType", true, false));
+            ConsoleIOService.ShowUserStringWithLineBreak(testInstance.GetType());
             Type myType = testInstance.GetType();
             MemberInfo[] members = myType.GetMembers();
 
             Program.print_splitter(amount, splitter);
             foreach (var member in members)
             {
-                Console.WriteLine($"Memeber = {member.DeclaringType}, {member.MemberType}, {member.Name}");
+                ConsoleIOService.ShowUserStringWithLineBreak($"Memeber = {member.DeclaringType}, {member.MemberType}, {member.Name}");
             }
             Program.print_splitter(amount, splitter);
             var fields = myType.GetFields(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public);
             foreach (var field in fields)
             {
-                Console.WriteLine($"Field = {field?.Name}, Type = {field.FieldType.Name}, Value = {field.GetValue(testInstance)?.ToString()}");
+                ConsoleIOService.ShowUserStringWithLineBreak($"Field = {field?.Name}, Type = {field.FieldType.Name}, Value = {field.GetValue(testInstance)?.ToString()}");
             }
             Program.print_splitter(amount, splitter);
             var methods = myType.GetMethods(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public);
@@ -39,7 +38,7 @@ namespace Studying_CS.Reflection
                 for (int i = 0; i < parametres.Length; i++)
                 {
                     Console.Write($"{parametres[i].ParameterType} {parametres[i].Name}");
-                    if (i+1 < parametres.Length)
+                    if (i + 1 < parametres.Length)
                     {
                         Console.Write(',');
                     }
@@ -48,11 +47,11 @@ namespace Studying_CS.Reflection
             }
             Program.print_splitter(amount, splitter);
             Assembly assembly = Assembly.LoadFrom(@"C:\Users\User\source\repos\Studying CS\Studying CS\Reflection\TestAssembly.dll");
-            Console.WriteLine(assembly.FullName);
+            ConsoleIOService.ShowUserStringWithLineBreak(assembly.FullName);
             Type[] types = assembly.GetTypes();
             foreach (var type in types)
             {
-                Console.WriteLine(type);
+                ConsoleIOService.ShowUserStringWithLineBreak(type);
             }
             Type programType = assembly.GetType("TestAssembly.Program");
             object pr = Activator.CreateInstance(programType);
@@ -60,7 +59,7 @@ namespace Studying_CS.Reflection
             methodInfo?.Invoke(pr, null);
 
             Assembly thAsm = Assembly.LoadFrom(@"C:\Users\User\source\repos\Studying CS\Studying CS\Reflection\TestThreadAsm.dll");
-            Console.WriteLine(thAsm.FullName);
+            ConsoleIOService.ShowUserStringWithLineBreak(thAsm.FullName);
             Type thType = thAsm.GetType("UrokiSS.Program");
             object type1 = Activator.CreateInstance(thType);
             MethodInfo main = thType.GetMethod("Main", BindingFlags.DeclaredOnly | BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Static | BindingFlags.Public);

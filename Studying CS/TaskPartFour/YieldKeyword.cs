@@ -1,7 +1,6 @@
-﻿using System;
+﻿using Studying_CS.IOservices;
+using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Text;
 
 namespace TaskPartFour.YieldStudy
 {
@@ -12,21 +11,21 @@ namespace TaskPartFour.YieldStudy
             Library library = new Library();
             foreach (Book book in library)
             {
-                Console.WriteLine($"Take Time = {book.TakeDate.ToString("HH:mm:ss")} Name = {book.Name}");
+                ConsoleIOService.ShowUserStringWithLineBreak($"Take Time = {book.TakeDate.ToString("HH:mm:ss")} Name = {book.Name}");
             }
             foreach (Person person in library.GetPerson())
-            { 
-                Console.WriteLine($"Name = {person.Name}, Age = {person.Age.ToString()}");
+            {
+                ConsoleIOService.ShowUserStringWithLineBreak($"Name = {person.Name}, Age = {person.Age.ToString()}");
             }
         }
     }
     public class Library : IEnumerable
     {
-        private Book[] _books = 
-        { 
-            new Book {Name="Ak1" }, 
-            new Book {Name="Ak2" }, 
-            new Book {Name="Ak3" }, 
+        private Book[] _books =
+        {
+            new Book {Name="Ak1" },
+            new Book {Name="Ak2" },
+            new Book {Name="Ak3" },
         };
         private Person[] _persons =
         {

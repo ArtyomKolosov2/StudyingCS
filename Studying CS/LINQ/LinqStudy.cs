@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Studying_CS.IOservices;
 using System.Linq;
 
 namespace Studying_CS.LINQ
@@ -16,7 +14,7 @@ namespace Studying_CS.LINQ
                             select t;
             foreach (var res in resultStr)
             {
-                Console.WriteLine(res);
+                ConsoleIOService.ShowUserStringWithLineBreak(res);
             }
         }
     }

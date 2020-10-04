@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Studying_CS.IOservices;
+using System;
 
 namespace TasksPartTwo.StudyDelegates
 {
@@ -48,7 +49,7 @@ namespace TasksPartTwo.StudyDelegates
 
             private void ShowInfo(Plane plane)
             {
-                Console.WriteLine($"Model {plane.Model}");
+                ConsoleIOService.ShowUserStringWithLineBreak($"Model {plane.Model}");
             }
 
             private Person GetPerson(string name)
@@ -64,11 +65,11 @@ namespace TasksPartTwo.StudyDelegates
         public class Person
         {
             public string Name { get; set; }
-            public virtual void Display() => Console.WriteLine($"Person {Name}");
+            public virtual void Display() => ConsoleIOService.ShowUserStringWithLineBreak($"Person {Name}");
         }
         public class Client : Person
         {
-            public override void Display() => Console.WriteLine($"Client {Name}");
+            public override void Display() => ConsoleIOService.ShowUserStringWithLineBreak($"Client {Name}");
         }
 
         public class Plane
@@ -78,7 +79,7 @@ namespace TasksPartTwo.StudyDelegates
 
         public class CargoPlane : Plane
         {
-        } 
+        }
     }
     namespace MainCSDelegates
     {
@@ -94,12 +95,12 @@ namespace TasksPartTwo.StudyDelegates
             }
             private static void Add(int x, int y)
             {
-                Console.WriteLine(x + y);
+                ConsoleIOService.ShowUserStringWithLineBreak(x + y);
             }
 
             private static void Multi(int x, int y)
             {
-                Console.WriteLine(x * y);
+                ConsoleIOService.ShowUserStringWithLineBreak(x * y);
             }
 
             private static void DoTheThing(int x, int y, Action<int, int> operation)
@@ -110,7 +111,7 @@ namespace TasksPartTwo.StudyDelegates
                 }
                 else
                 {
-                    Console.WriteLine("Error");
+                    ConsoleIOService.ShowUserStringWithLineBreak("Error");
                 }
             }
         }

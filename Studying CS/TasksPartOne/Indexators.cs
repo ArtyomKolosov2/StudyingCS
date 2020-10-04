@@ -30,11 +30,11 @@ namespace TasksPartOne
             }
             public string this[int index]
             {
-                get {return data[index]; }
-                private set {data[index] = value; }
+                get { return data[index]; }
+                private set { data[index] = value; }
             }
 
-            public string [] Data
+            public string[] Data
             {
                 get { return data; }
             }

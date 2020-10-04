@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace TasksPartOne
+﻿namespace TasksPartOne
 {
     namespace Operatorss
     {
@@ -21,7 +17,7 @@ namespace TasksPartOne
             }
             public static OperatorReboot operator +(OperatorReboot c1, OperatorReboot c2)
             {
-                return new OperatorReboot{ Size = c1.Size + c2.Size };
+                return new OperatorReboot { Size = c1.Size + c2.Size };
             }
 
             // < and > Перегружаются в связке!!!

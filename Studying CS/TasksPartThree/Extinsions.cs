@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Studying_CS.IOservices;
 
 namespace TasksPartThree
 {
@@ -10,10 +10,10 @@ namespace TasksPartThree
             {
                 string ex = "ABCAAC";
                 string ex2 = "qwerty\n\t\r";
-                Console.WriteLine(ex.CountSymbols('A'));
-                Console.WriteLine(ex2.FindTrueLength());
+                ConsoleIOService.ShowUserStringWithLineBreak(ex.CountSymbols('A'));
+                ConsoleIOService.ShowUserStringWithLineBreak(ex2.FindTrueLength());
             }
-        } 
+        }
 
 
 

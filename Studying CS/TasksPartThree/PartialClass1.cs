@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Studying_CS.IOservices;
 
 namespace TasksPartThree
 {
@@ -19,9 +17,9 @@ namespace TasksPartThree
             static partial void PartialMethod();
             public static void Move()
             {
-                Console.WriteLine("Move method from PartialClass1.cs file");
+                ConsoleIOService.ShowUserStringWithLineBreak("Move method from PartialClass1.cs file");
                 PartialMethod();
             }
-        } 
+        }
     }
 }

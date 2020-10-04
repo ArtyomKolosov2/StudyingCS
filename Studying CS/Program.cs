@@ -1,4 +1,5 @@
-﻿using Studying_CS.Reflection;
+﻿using Studying_CS.IOservices;
+using Studying_CS.Reflection;
 using System;
 
 namespace Studying_CS
@@ -9,9 +10,9 @@ namespace Studying_CS
         {
             int partAmount = 5;
             string Command;
-            Console.WriteLine($"Choose part (1-{partAmount.ToString()}):");
-            Command = Console.ReadLine();
-            switch (Command) 
+            ConsoleIOService.ShowUserStringWithLineBreak($"Choose part (1-{partAmount.ToString()}):");
+            Command = ConsoleIOService.GetUserString();
+            switch (Command)
             {
                 case "1":
                     Part1.PartOneStart();
@@ -29,7 +30,7 @@ namespace Studying_CS
                     ReflectionStudyClass.StartExample();
                     break;
                 default:
-                    Console.WriteLine("Error: Incorrect Part!");
+                    ConsoleIOService.ShowUserStringWithLineBreak("Error: Incorrect Part!");
                     break;
             }
         }

@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using TasksPartThree.StudyExtinsions;
-using TasksPartThree.StudyPartial;
-using TasksPartThree.StudyAnonymous;
-using TasksPartThree.LocalFunctionsStudy;
-using TasksPartThree.StudyDeconstruction;
-using TasksPartThree.StudyPatternMacthing;
+﻿using TasksPartThree.LocalFunctionsStudy;
 using TasksPartThree.NullableTypes;
 using TasksPartThree.ReferenceVars;
+using TasksPartThree.StudyAnonymous;
+using TasksPartThree.StudyDeconstruction;
+using TasksPartThree.StudyExtinsions;
+using TasksPartThree.StudyPartial;
+using TasksPartThree.StudyPatternMacthing;
 
 namespace Studying_CS
 {

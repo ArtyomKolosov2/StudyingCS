@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Studying_CS.IOservices;
 using System.Threading;
 
 namespace TaskPartFour.ThreadStudy
@@ -19,7 +17,7 @@ namespace TaskPartFour.ThreadStudy
         {
             for (int i = 0; i < 20; i += 2)
             {
-                Console.WriteLine(i);
+                ConsoleIOService.ShowUserStringWithLineBreak(i);
                 Thread.Sleep(300);
             }
         }
@@ -28,7 +26,7 @@ namespace TaskPartFour.ThreadStudy
         {
             for (int i = 1; i < 20; i += 2)
             {
-                Console.WriteLine(i);
+                ConsoleIOService.ShowUserStringWithLineBreak(i);
                 Thread.Sleep(300);
             }
         }

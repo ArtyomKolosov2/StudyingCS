@@ -43,9 +43,9 @@ namespace TasksPartOne
             }
             public override string get_info()
             {
-                return string.Format("{0} ({1}, {2}$, seats:{3})", 
+                return string.Format("{0} ({1}, {2}$, seats:{3})",
                     Name,
-                    Power.ToString(), 
+                    Power.ToString(),
                     Cost.ToString(),
                     Seats.ToString());
             }

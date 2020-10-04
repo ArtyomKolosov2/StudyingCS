@@ -1,6 +1,6 @@
-﻿using System;
+﻿using Studying_CS.IOservices;
+using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace TasksPartTwo
 {
@@ -74,21 +74,21 @@ namespace TasksPartTwo
 
             private event SellHandler _SellNotify;
 
-            public event SellHandler SellNotify 
+            public event SellHandler SellNotify
             {
                 add
                 {
                     _SellNotify += value;
-                    Console.WriteLine($"{value.Method.Name} added!");
+                    ConsoleIOService.ShowUserStringWithLineBreak($"{value.Method.Name} added!");
                 }
                 remove
                 {
                     _SellNotify -= value;
-                    Console.WriteLine($"{value.Method.Name} removed! Now messages will not shown!");
+                    ConsoleIOService.ShowUserStringWithLineBreak($"{value.Method.Name} removed! Now messages will not shown!");
                 }
             }
 
-            public Shop(Car [] cars)
+            public Shop(Car[] cars)
             {
                 Cars = new List<Car>();
                 AddCarRange(cars);
@@ -129,8 +129,8 @@ namespace TasksPartTwo
 
             private static void ShowEventInfo(object sender, ShopEventsArgs e)
             {
-                Console.WriteLine(e.Message);
-                Console.WriteLine(e.soldCar);
+                ConsoleIOService.ShowUserStringWithLineBreak(e.Message);
+                ConsoleIOService.ShowUserStringWithLineBreak(e.soldCar);
             }
         }
     }

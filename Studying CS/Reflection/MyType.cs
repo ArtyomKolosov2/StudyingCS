@@ -1,6 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Studying_CS.IOservices;
+using System;
 
 namespace Studying_CS.Reflection
 {
@@ -22,7 +21,7 @@ namespace Studying_CS.Reflection
 
         public event DoSmt1Called DoSmt1EventHandler;
         public DateTime CreationTime { get; private set; } = DateTime.Now;
-        
+
         public MyType()
         {
             _someNumber = 0;
@@ -39,17 +38,17 @@ namespace Studying_CS.Reflection
         }
         private void DoSmt1()
         {
-            Console.WriteLine("DoSmt1");
+            ConsoleIOService.ShowUserStringWithLineBreak("DoSmt1");
             DoSmt1EventHandler?.Invoke("SmtHappend");
         }
         public void DoSmt2()
         {
-            Console.WriteLine("DoSmt2");
+            ConsoleIOService.ShowUserStringWithLineBreak("DoSmt2");
         }
 
         private string DoSmt3()
         {
-            Console.WriteLine("DoSmt3");
+            ConsoleIOService.ShowUserStringWithLineBreak("DoSmt3");
             return "SMT3";
         }
     }

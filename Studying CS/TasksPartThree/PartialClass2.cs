@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Studying_CS.IOservices;
 
 namespace TasksPartThree
 {
@@ -10,12 +8,12 @@ namespace TasksPartThree
         {
             public static void Drive()
             {
-                Console.WriteLine("Drive method from PartialClass2.cs file");
+                ConsoleIOService.ShowUserStringWithLineBreak("Drive method from PartialClass2.cs file");
             }
             static partial void PartialMethod()
             {
-                Console.WriteLine("Partial Methdo form PartialClass2.cs file");
+                ConsoleIOService.ShowUserStringWithLineBreak("Partial Methdo form PartialClass2.cs file");
             }
-        } 
+        }
     }
 }
