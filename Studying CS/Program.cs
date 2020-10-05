@@ -1,5 +1,6 @@
 ﻿using Studying_CS.IOservices;
 using Studying_CS.Reflection;
+using Studying_CS.LINQ;
 using System;
 
 namespace Studying_CS
@@ -28,6 +29,9 @@ namespace Studying_CS
                     break;
                 case "5":
                     ReflectionStudyClass.StartExample();
+                    break;
+                case "6":
+                    LinqStudy.StartExample();
                     break;
                 default:
                     ConsoleIOService.ShowUserStringWithLineBreak("Error: Incorrect Part!");
