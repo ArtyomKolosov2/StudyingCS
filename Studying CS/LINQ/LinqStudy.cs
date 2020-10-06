@@ -6,6 +6,12 @@ namespace Studying_CS.LINQ
 {
     public static class LinqStudy
     {
+        public class City
+        {
+            public int Age { get; set; }
+            public int Population { get; set; }
+            public string Name { get; set; }
+        }
         public static void StartExample()
         {
             int amount = 50;
@@ -35,6 +41,67 @@ namespace Studying_CS.LINQ
             {
                 ConsoleIOService.ShowUserStringWithLineBreak(res);
             }
+            Program.center(amount, "Fourth-example", split);
+            var Cities = new City[]
+            {
+                new City{ Age=856, Name="Bransk", Population=123453},
+                new City{ Age=1001, Name="Minks", Population=2342123},
+                new City{ Age=1001, Name="Orsha", Population=120000},
+                new City{ Age=1043, Name="Vitebsk", Population=123453},
+                new City{ Age=54, Name="Novopolotsk", Population=50000},
+                new City{ Age=69, Name="Soligorsk", Population=50405}
+            };
+            var searchCitiesResultOne = from t in Cities
+                                    where t.Age >= 1000 && t.Population > 0 && t.Population < 1000000
+                                    orderby t.Population
+                                    select t;
+            foreach (var res in searchCitiesResultOne)
+            {
+                ConsoleIOService.ShowUserStringWithLineBreak
+                    (
+                    $"Name: {res.Name}, " +
+                    $"Population: {res.Population}, " +
+                    $"Age = {res.Age}"
+                    );
+            }
+            Program.center(amount, "Fourth-example", split);
+            var searchCitiesResultTwo = Cities.Where(t => t.Population > 100000 && t.Population < 1000000).OrderByDescending(t => t.Population);
+            foreach (var res in searchCitiesResultTwo)
+            {
+                ConsoleIOService.ShowUserStringWithLineBreak
+                    (
+                    $"Name: {res.Name}, " +
+                    $"Population: {res.Population}, " +
+                    $"Age = {res.Age}"
+                    );
+            }
+            Program.center(amount, "Fourth-example", split);
+            var searchCitiesResultThree = from t in Cities
+                                          select t.Name;
+            foreach (var res in searchCitiesResultThree)
+            {
+                ConsoleIOService.ShowUserStringWithLineBreak
+                    (
+                    res
+                    );
+            }
+            Program.center(amount, "Fourth-example", split);
+            var searchCitiesResultFour = from c in Cities
+                                         let newName = $"CityName: {c.Name}"
+                                          select new
+                                          {
+                                              CityName = newName,
+                                              c.Population
+                                          };
+            foreach (var res in searchCitiesResultFour)
+            {
+                ConsoleIOService.ShowUserStringWithLineBreak
+                    (
+                    $"{res.CityName}, " +
+                    $"Population: {res.Population}, "
+                    );
+            }
+            Program.center(amount, "Fourth-example", split);
         }
     }
 }
