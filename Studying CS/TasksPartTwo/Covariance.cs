@@ -49,7 +49,7 @@ namespace TasksPartTwo.StudyDelegates
 
             private void ShowInfo(Plane plane)
             {
-                ConsoleIOService.ShowUserStringWithLineBreak($"Model {plane.Model}");
+                IOService.ShowUserStringWithLineBreak($"Model {plane.Model}");
             }
 
             private Person GetPerson(string name)
@@ -65,11 +65,11 @@ namespace TasksPartTwo.StudyDelegates
         public class Person
         {
             public string Name { get; set; }
-            public virtual void Display() => ConsoleIOService.ShowUserStringWithLineBreak($"Person {Name}");
+            public virtual void Display() => IOService.ShowUserStringWithLineBreak($"Person {Name}");
         }
         public class Client : Person
         {
-            public override void Display() => ConsoleIOService.ShowUserStringWithLineBreak($"Client {Name}");
+            public override void Display() => IOService.ShowUserStringWithLineBreak($"Client {Name}");
         }
 
         public class Plane
@@ -95,12 +95,12 @@ namespace TasksPartTwo.StudyDelegates
             }
             private static void Add(int x, int y)
             {
-                ConsoleIOService.ShowUserStringWithLineBreak(x + y);
+                IOService.ShowUserStringWithLineBreak(x + y);
             }
 
             private static void Multi(int x, int y)
             {
-                ConsoleIOService.ShowUserStringWithLineBreak(x * y);
+                IOService.ShowUserStringWithLineBreak(x * y);
             }
 
             private static void DoTheThing(int x, int y, Action<int, int> operation)
@@ -111,7 +111,7 @@ namespace TasksPartTwo.StudyDelegates
                 }
                 else
                 {
-                    ConsoleIOService.ShowUserStringWithLineBreak("Error");
+                    IOService.ShowUserStringWithLineBreak("Error");
                 }
             }
         }

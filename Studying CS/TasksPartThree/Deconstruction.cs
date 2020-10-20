@@ -8,13 +8,13 @@ namespace TasksPartThree.StudyDeconstruction
         {
             Language exLang = new Language { Code = 1, Name = "English" };
             (string langName, int langCode) = exLang;
-            ConsoleIOService.ShowUserStringWithLineBreak($"Name = {langName}, code = {langCode}");
+            IOService.ShowUserStringWithLineBreak($"Name = {langName}, code = {langCode}");
             Human exHuman = new Human { Age = 18, Name = "Artyom", SurName = "Kolosov" };
             Human exHuman2 = new Human { Age = 20, Name = "Ad", SurName = "Kol" };
             exHuman.Deconstruct(out int age, out string name, out string surName);
             (int age2, string name2, _) = exHuman2;
-            ConsoleIOService.ShowUserStringWithLineBreak($"Age = {age}, Name = {name}, SurName = {surName}");
-            ConsoleIOService.ShowUserStringWithLineBreak($"Age = {age2}, Name = {name2}");
+            IOService.ShowUserStringWithLineBreak($"Age = {age}, Name = {name}, SurName = {surName}");
+            IOService.ShowUserStringWithLineBreak($"Age = {age2}, Name = {name2}");
         }
     }
 

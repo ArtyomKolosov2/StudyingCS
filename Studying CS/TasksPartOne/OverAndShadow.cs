@@ -10,7 +10,7 @@ namespace TasksPartOne
 
             public virtual void Show()
             {
-                ConsoleIOService.ShowUserStringWithLineBreak(string.Format("BaseClassShow Num = {0}", Num.ToString()));
+                IOService.ShowUserStringWithLineBreak(string.Format("BaseClassShow Num = {0}", Num.ToString()));
             }
         }
 
@@ -25,7 +25,7 @@ namespace TasksPartOne
 
             public override void Show()
             {
-                ConsoleIOService.ShowUserStringWithLineBreak(string.Format("NewClassShow Num = {0}", Num.ToString()));
+                IOService.ShowUserStringWithLineBreak(string.Format("NewClassShow Num = {0}", Num.ToString()));
             }
         }
     }
@@ -42,7 +42,7 @@ namespace TasksPartOne
             }
             public void Show()
             {
-                ConsoleIOService.ShowUserStringWithLineBreak(string.Format("BaseEx show name = {0}, age = {1}",
+                IOService.ShowUserStringWithLineBreak(string.Format("BaseEx show name = {0}, age = {1}",
                     Name,
                     age));
             }
@@ -59,7 +59,7 @@ namespace TasksPartOne
 
             public new void Show()
             {
-                ConsoleIOService.ShowUserStringWithLineBreak(string.Format("NewEx show name = {0}, second name = {1}, age = {2}",
+                IOService.ShowUserStringWithLineBreak(string.Format("NewEx show name = {0}, second name = {1}, age = {2}",
                     Name,
                     SecondName,
                     age.ToString()

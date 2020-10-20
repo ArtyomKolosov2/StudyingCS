@@ -22,31 +22,31 @@ namespace TasksPartThree.StudyPatternMacthing
                 case null:
                     break;
                 default:
-                    ConsoleIOService.ShowUserStringWithLineBreak("NoPattern");
+                    IOService.ShowUserStringWithLineBreak("NoPattern");
                     break;
 
             }
-            ConsoleIOService.ShowUserStringWithLineBreak(GetMessage(new Human { Age = 18 }));
-            ConsoleIOService.ShowUserStringWithLineBreak(GetMessage(new Human { Name = "Artyom" }));
-            ConsoleIOService.ShowUserStringWithLineBreak(GetMessage(new Human { SurName = "Kolosov" }));
-            ConsoleIOService.ShowUserStringWithLineBreak(GetMessage(new Human()));
+            IOService.ShowUserStringWithLineBreak(GetMessage(new Human { Age = 18 }));
+            IOService.ShowUserStringWithLineBreak(GetMessage(new Human { Name = "Artyom" }));
+            IOService.ShowUserStringWithLineBreak(GetMessage(new Human { SurName = "Kolosov" }));
+            IOService.ShowUserStringWithLineBreak(GetMessage(new Human()));
 
-            ConsoleIOService.ShowUserStringWithLineBreak(GetOperationResult(1, 2, 2));
+            IOService.ShowUserStringWithLineBreak(GetOperationResult(1, 2, 2));
             try
             {
-                ConsoleIOService.ShowUserStringWithLineBreak(GetOperationResult(5, 2, 2));
+                IOService.ShowUserStringWithLineBreak(GetOperationResult(5, 2, 2));
             }
             catch (ArgumentException ex)
             {
-                ConsoleIOService.ShowUserStringWithLineBreak(ex.Message);
+                IOService.ShowUserStringWithLineBreak(ex.Message);
             }
-            ConsoleIOService.ShowUserStringWithLineBreak(GetWelcome("english", null, null));
-            ConsoleIOService.ShowUserStringWithLineBreak(GetWelcome("rs", "morning", "sir"));
+            IOService.ShowUserStringWithLineBreak(GetWelcome("english", null, null));
+            IOService.ShowUserStringWithLineBreak(GetWelcome("rs", "morning", "sir"));
 
-            ConsoleIOService.ShowUserStringWithLineBreak(GetLanguageInfo(new Language { Name = "english" }));
-            ConsoleIOService.ShowUserStringWithLineBreak(GetLanguageInfo(new Language { Code = 2 }));
-            ConsoleIOService.ShowUserStringWithLineBreak(GetLanguageInfo(new Language { Name = "German", Code = 3 }));
-            ConsoleIOService.ShowUserStringWithLineBreak(GetLanguageInfo(null));
+            IOService.ShowUserStringWithLineBreak(GetLanguageInfo(new Language { Name = "english" }));
+            IOService.ShowUserStringWithLineBreak(GetLanguageInfo(new Language { Code = 2 }));
+            IOService.ShowUserStringWithLineBreak(GetLanguageInfo(new Language { Name = "German", Code = 3 }));
+            IOService.ShowUserStringWithLineBreak(GetLanguageInfo(null));
         }
         // Паттерн свойств
         public static string GetMessage(Human human)

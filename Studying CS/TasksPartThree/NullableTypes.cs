@@ -13,14 +13,14 @@ namespace TasksPartThree.NullableTypes
             Nullable<bool> Flag = true;
             if (z == null)
             {
-                ConsoleIOService.ShowUserStringWithLineBreak("z == null");
+                IOService.ShowUserStringWithLineBreak("z == null");
             }
             z = 50;
             if (z.HasValue && Flag.Value)
             {
-                ConsoleIOService.ShowUserStringWithLineBreak($"z = {z.Value}, Flag = true");
+                IOService.ShowUserStringWithLineBreak($"z = {z.Value}, Flag = true");
             }
-            ConsoleIOService.ShowUserStringWithLineBreak(color.GetValueOrDefault(Color.Red));
+            IOService.ShowUserStringWithLineBreak(color.GetValueOrDefault(Color.Red));
         }
     }
 }

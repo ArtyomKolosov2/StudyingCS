@@ -2,7 +2,7 @@
 
 namespace Studying_CS.IOservices
 {
-    public static class ConsoleIOService
+    public static class IOService
     {
         public static string GetUserString()
         {

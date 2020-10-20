@@ -38,17 +38,17 @@ namespace Studying_CS.Reflection
         }
         private void DoSmt1()
         {
-            ConsoleIOService.ShowUserStringWithLineBreak("DoSmt1");
+            IOService.ShowUserStringWithLineBreak("DoSmt1");
             DoSmt1EventHandler?.Invoke("SmtHappend");
         }
         public void DoSmt2()
         {
-            ConsoleIOService.ShowUserStringWithLineBreak("DoSmt2");
+            IOService.ShowUserStringWithLineBreak("DoSmt2");
         }
 
         private string DoSmt3()
         {
-            ConsoleIOService.ShowUserStringWithLineBreak("DoSmt3");
+            IOService.ShowUserStringWithLineBreak("DoSmt3");
             return "SMT3";
         }
     }

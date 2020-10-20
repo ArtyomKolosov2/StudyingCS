@@ -23,15 +23,15 @@ namespace Studying_CS.LINQ
                             select t;
             foreach (var res in resultStr)
             {
-                ConsoleIOService.ShowUserStringWithLineBreak(res);
+                IOService.ShowUserStringWithLineBreak(res);
             }
-            Program.center(amount, "Second-example", split);
+            Program.center(amount, "New example", split);
             var selectedItem = (strings.Where(t=> t.Length==4)).OrderByDescending(t=>t);
             foreach (var res in selectedItem)
             {
-                ConsoleIOService.ShowUserStringWithLineBreak(res);
+                IOService.ShowUserStringWithLineBreak(res);
             }
-            Program.center(amount, "Third-example", split);
+            Program.center(amount, "New example", split);
             int[] myArray = new int[] { 1, 2, 4, -34, 43, 34, 2,-41,-32, 123, 13, 12, 3, 1, 123, 1443, 423, 1, 2 };
             IEnumerable<int> result = (from t in myArray
                                       where t % 2 == 0 && t > 0
@@ -39,9 +39,9 @@ namespace Studying_CS.LINQ
                                       select t).Distinct();
             foreach (var res in result)
             {
-                ConsoleIOService.ShowUserStringWithLineBreak(res);
+                IOService.ShowUserStringWithLineBreak(res);
             }
-            Program.center(amount, "Fourth-example", split);
+            Program.center(amount, "New example", split);
             var Cities = new City[]
             {
                 new City{ Age=856, Name="Bransk", Population=123453},
@@ -57,35 +57,35 @@ namespace Studying_CS.LINQ
                                     select t;
             foreach (var res in searchCitiesResultOne)
             {
-                ConsoleIOService.ShowUserStringWithLineBreak
+                IOService.ShowUserStringWithLineBreak
                     (
                     $"Name: {res.Name}, " +
                     $"Population: {res.Population}, " +
                     $"Age = {res.Age}"
                     );
             }
-            Program.center(amount, "Fourth-example", split);
+            Program.center(amount, "New example", split);
             var searchCitiesResultTwo = Cities.Where(t => t.Population > 100000 && t.Population < 1000000).OrderByDescending(t => t.Population);
             foreach (var res in searchCitiesResultTwo)
             {
-                ConsoleIOService.ShowUserStringWithLineBreak
+                IOService.ShowUserStringWithLineBreak
                     (
                     $"Name: {res.Name}, " +
                     $"Population: {res.Population}, " +
                     $"Age = {res.Age}"
                     );
             }
-            Program.center(amount, "Fourth-example", split);
+            Program.center(amount, "New example", split);
             var searchCitiesResultThree = from t in Cities
                                           select t.Name;
             foreach (var res in searchCitiesResultThree)
             {
-                ConsoleIOService.ShowUserStringWithLineBreak
+                IOService.ShowUserStringWithLineBreak
                     (
                     res
                     );
             }
-            Program.center(amount, "Fourth-example", split);
+            Program.center(amount, "New example", split);
             var searchCitiesResultFour = from c in Cities
                                          let newName = $"CityName: {c.Name}"
                                           select new
@@ -95,13 +95,13 @@ namespace Studying_CS.LINQ
                                           };
             foreach (var res in searchCitiesResultFour)
             {
-                ConsoleIOService.ShowUserStringWithLineBreak
+                IOService.ShowUserStringWithLineBreak
                     (
                     $"{res.CityName}, " +
                     $"Population: {res.Population}, "
                     );
             }
-            Program.center(amount, "Fourth-example", split);
+            Program.center(amount, "New example", split);
         }
     }
 }

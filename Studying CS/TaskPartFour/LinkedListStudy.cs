@@ -118,7 +118,7 @@ namespace TaskPartFour.LinkedListStudyCS
             int count = 1;
             while (ptr != null)
             {
-                ConsoleIOService.ShowUserStringWithLineBreak($"{count.ToString()}: {ptr.Value.ToString()}");
+                IOService.ShowUserStringWithLineBreak($"{count.ToString()}: {ptr.Value.ToString()}");
                 count++;
                 ptr = ptr.Next;
             }

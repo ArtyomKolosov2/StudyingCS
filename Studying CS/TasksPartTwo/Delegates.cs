@@ -24,16 +24,16 @@ namespace TasksPartTwo
                 int refx = 0;
                 Square square = x => x * x;
                 OperationMulti multi = (x, y) => x * y;
-                ShowSmt show = () => ConsoleIOService.ShowUserStringWithLineBreak("Lambda Without Arguments!");
+                ShowSmt show = () => IOService.ShowUserStringWithLineBreak("Lambda Without Arguments!");
                 RefHandler refHandler = (ref int x) => x += 5;
                 ShowHandler showHandler = () => ShowMessage();
 
 
-                ConsoleIOService.ShowUserStringWithLineBreak(multi(5, 5).ToString());
-                ConsoleIOService.ShowUserStringWithLineBreak(square(10).ToString());
+                IOService.ShowUserStringWithLineBreak(multi(5, 5).ToString());
+                IOService.ShowUserStringWithLineBreak(square(10).ToString());
                 show();
                 refHandler(ref refx);
-                ConsoleIOService.ShowUserStringWithLineBreak($"Refx = {refx}");
+                IOService.ShowUserStringWithLineBreak($"Refx = {refx}");
                 showHandler();
 
                 int[] Array = new int[] { 5, 6, 3, 5, 1, 10, 10 };
@@ -51,12 +51,12 @@ namespace TasksPartTwo
                         sum += num;
                     }
                 }
-                ConsoleIOService.ShowUserStringWithLineBreak($"Sum with bool expression x > 5 = {sum}");
+                IOService.ShowUserStringWithLineBreak($"Sum with bool expression x > 5 = {sum}");
             }
 
             private void ShowMessage()
             {
-                ConsoleIOService.ShowUserStringWithLineBreak("Hello from lambda!!!");
+                IOService.ShowUserStringWithLineBreak("Hello from lambda!!!");
             }
         }
         public class AnonimMethods
@@ -77,7 +77,7 @@ namespace TasksPartTwo
                 ShowOne = delegate (string message)
                 {
                     Console.BackgroundColor = ConsoleColor.Red;
-                    ConsoleIOService.ShowUserStringWithLineBreak(message);
+                    IOService.ShowUserStringWithLineBreak(message);
                     Console.BackgroundColor = ConsoleColor.White;
                 };
                 ShowMessage("Hello from first anonim example!", ShowOne);
@@ -85,7 +85,7 @@ namespace TasksPartTwo
                 // передачей в метод
                 {
                     Console.BackgroundColor = ConsoleColor.Yellow;
-                    ConsoleIOService.ShowUserStringWithLineBreak(message);
+                    IOService.ShowUserStringWithLineBreak(message);
                     Console.BackgroundColor = ConsoleColor.White;
                 });
                 ShowSum("Third function (returns int)", delegate (int x, int y)
@@ -94,12 +94,12 @@ namespace TasksPartTwo
                 });
                 ShowMessage("ExampleNumberFour", delegate
                 {
-                    ConsoleIOService.ShowUserStringWithLineBreak("Nice One!");
+                    IOService.ShowUserStringWithLineBreak("Nice One!");
                 });
 
                 SumTwo = delegate (int x, int y)
                 {
-                    ConsoleIOService.ShowUserStringWithLineBreak("SumTwo anonim");
+                    IOService.ShowUserStringWithLineBreak("SumTwo anonim");
                     return x + y;
                 };
 
@@ -114,7 +114,7 @@ namespace TasksPartTwo
             private void ShowSum(string message, SumHandler show)
             {
                 Console.Write(message + " ");
-                ConsoleIOService.ShowUserStringWithLineBreak(show(5, 5));
+                IOService.ShowUserStringWithLineBreak(show(5, 5));
             }
 
         }
@@ -123,7 +123,7 @@ namespace TasksPartTwo
         {
             public void ShowDelMessage()
             {
-                ConsoleIOService.ShowUserStringWithLineBreak("This Message Was Called from example class!");
+                IOService.ShowUserStringWithLineBreak("This Message Was Called from example class!");
             }
         }
 
@@ -193,9 +193,9 @@ namespace TasksPartTwo
             {
                 Operations operations;
                 operations = OperationMulti;
-                ConsoleIOService.ShowUserStringWithLineBreak(operations(5, 5));
+                IOService.ShowUserStringWithLineBreak(operations(5, 5));
                 operations = OperationSum;
-                ConsoleIOService.ShowUserStringWithLineBreak(operations(10, 10));
+                IOService.ShowUserStringWithLineBreak(operations(10, 10));
             }
             public void ThirdExample()
             {
@@ -231,7 +231,7 @@ namespace TasksPartTwo
             public void ExampleNumberSeven()
             {
                 Operation<decimal, int> op = Square;
-                ConsoleIOService.ShowUserStringWithLineBreak(op(10));
+                IOService.ShowUserStringWithLineBreak(op(10));
             }
             private decimal Square(int n)
             {
@@ -244,27 +244,27 @@ namespace TasksPartTwo
             }
             private void ShowGoodMorning()
             {
-                ConsoleIOService.ShowUserStringWithLineBreak("Good Morning, friend!");
+                IOService.ShowUserStringWithLineBreak("Good Morning, friend!");
             }
 
             private void FirstFunc()
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                ConsoleIOService.ShowUserStringWithLineBreak("First Func");
+                IOService.ShowUserStringWithLineBreak("First Func");
                 Console.ForegroundColor = ConsoleColor.Black;
             }
 
             private void SecondFunc()
             {
                 Console.BackgroundColor = ConsoleColor.Yellow;
-                ConsoleIOService.ShowUserStringWithLineBreak("Second Func");
+                IOService.ShowUserStringWithLineBreak("Second Func");
                 Console.BackgroundColor = ConsoleColor.White;
 
             }
 
             private void ThirdFunc()
             {
-                ConsoleIOService.ShowUserStringWithLineBreak("Third Func from another delegate");
+                IOService.ShowUserStringWithLineBreak("Third Func from another delegate");
             }
 
             private int OperationMulti(int x, int y)
@@ -279,7 +279,7 @@ namespace TasksPartTwo
             private void ShowGoodEvening()
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                ConsoleIOService.ShowUserStringWithLineBreak("Good Evening, my friend!");
+                IOService.ShowUserStringWithLineBreak("Good Evening, my friend!");
                 Console.ForegroundColor = ConsoleColor.Black;
             }
         }

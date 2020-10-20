@@ -10,8 +10,8 @@ namespace TasksPartThree
             {
                 string ex = "ABCAAC";
                 string ex2 = "qwerty\n\t\r";
-                ConsoleIOService.ShowUserStringWithLineBreak(ex.CountSymbols('A'));
-                ConsoleIOService.ShowUserStringWithLineBreak(ex2.FindTrueLength());
+                IOService.ShowUserStringWithLineBreak(ex.CountSymbols('A'));
+                IOService.ShowUserStringWithLineBreak(ex2.FindTrueLength());
             }
         }
 

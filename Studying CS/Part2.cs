@@ -13,13 +13,13 @@ namespace Studying_CS
     {
         public static void ShowState(string msg, int amount)
         {
-            ConsoleIOService.ShowUserStringWithLineBreak(msg + amount.ToString());
+            IOService.ShowUserStringWithLineBreak(msg + amount.ToString());
         }
 
         public static void ShowStateRed(string msg, int amount)
         {
             Console.BackgroundColor = ConsoleColor.Red;
-            ConsoleIOService.ShowUserStringWithLineBreak(msg + amount.ToString());
+            IOService.ShowUserStringWithLineBreak(msg + amount.ToString());
             Console.BackgroundColor = ConsoleColor.White;
         }
         public static void PartTwoStart()
@@ -36,7 +36,7 @@ namespace Studying_CS
             }
             catch (Exception ex)
             {
-                ConsoleIOService.ShowUserStringWithLineBreak(string.Format("Exception ({0}) wasnt handled because of TryFinally construction", ex.Source));
+                IOService.ShowUserStringWithLineBreak(string.Format("Exception ({0}) wasnt handled because of TryFinally construction", ex.Source));
             }
             Program.center(amount, "ExceptionProperties", splitter);
             DiffExceptions.ExceptionProperties();

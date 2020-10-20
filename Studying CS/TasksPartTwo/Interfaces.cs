@@ -31,8 +31,8 @@ namespace TasksPartTwo
                 ((IMoveAction)truck).Move();
                 Test<int> test1 = new Test<int> { Data = 555 };
                 Test<string> test2 = new Test<string> { Data = "TestTwoStr" };
-                ConsoleIOService.ShowUserStringWithLineBreak($"{test1.Data} = {test1.Data.GetType()}");
-                ConsoleIOService.ShowUserStringWithLineBreak($"{test2.Data} = {test2.Data.GetType()}");
+                IOService.ShowUserStringWithLineBreak($"{test1.Data} = {test1.Data.GetType()}");
+                IOService.ShowUserStringWithLineBreak($"{test2.Data} = {test2.Data.GetType()}");
                 Shop shop = new Shop()
                 {
                     ShopName = "StartShopName",
@@ -44,18 +44,18 @@ namespace TasksPartTwo
                     }
                 };
                 Shop copiedShop = (Shop)shop.Clone();
-                ConsoleIOService.ShowUserStringWithLineBreak("Original shop name - " + shop.TestGood.Name);
-                ConsoleIOService.ShowUserStringWithLineBreak("Copied shop name - " + copiedShop.TestGood.Name);
+                IOService.ShowUserStringWithLineBreak("Original shop name - " + shop.TestGood.Name);
+                IOService.ShowUserStringWithLineBreak("Copied shop name - " + copiedShop.TestGood.Name);
                 shop.TestGood.Name = "!newShopName!";
-                ConsoleIOService.ShowUserStringWithLineBreak("Original name changed - " + shop.TestGood.Name);
-                ConsoleIOService.ShowUserStringWithLineBreak("Copied shop name- " + copiedShop.TestGood.Name);
+                IOService.ShowUserStringWithLineBreak("Original name changed - " + shop.TestGood.Name);
+                IOService.ShowUserStringWithLineBreak("Copied shop name- " + copiedShop.TestGood.Name);
 
             }
 
             private static void ShowPoly(IMovable movable)
             {
                 movable.Move();
-                ConsoleIOService.ShowUserStringWithLineBreak(movable.IsMoved());
+                IOService.ShowUserStringWithLineBreak(movable.IsMoved());
             }
         }
 
@@ -79,7 +79,7 @@ namespace TasksPartTwo
         {
             public void Move()
             {
-                ConsoleIOService.ShowUserStringWithLineBreak("Car is moving");
+                IOService.ShowUserStringWithLineBreak("Car is moving");
             }
             //public void virtual Move(){...}; or abstract virtual Move(){...};
         }
@@ -93,7 +93,7 @@ namespace TasksPartTwo
             //Также можно использовать явную реализацию
             void IMoveAction.Move()
             {
-                ConsoleIOService.ShowUserStringWithLineBreak("ActionMove");
+                IOService.ShowUserStringWithLineBreak("ActionMove");
             }
         }
 
@@ -101,12 +101,12 @@ namespace TasksPartTwo
         {
             void ISchool.Study()
             {
-                ConsoleIOService.ShowUserStringWithLineBreak("School");
+                IOService.ShowUserStringWithLineBreak("School");
             }
 
             void IUniversity.Study()
             {
-                ConsoleIOService.ShowUserStringWithLineBreak("Univerity");
+                IOService.ShowUserStringWithLineBreak("Univerity");
             }
         }
         public interface IMovable
@@ -136,13 +136,13 @@ namespace TasksPartTwo
             public bool Moved { get; set; } = false;
             public void Move()
             {
-                ConsoleIOService.ShowUserStringWithLineBreak("Car Moving!");
+                IOService.ShowUserStringWithLineBreak("Car Moving!");
                 Moved = true;
             }
 
             public bool IsMoved()
             {
-                ConsoleIOService.ShowUserStringWithLineBreak("IsMoved CarClass");
+                IOService.ShowUserStringWithLineBreak("IsMoved CarClass");
                 return Moved;
             }
         }
@@ -152,13 +152,13 @@ namespace TasksPartTwo
             public bool Moved { get; set; } = false;
             public void Move()
             {
-                ConsoleIOService.ShowUserStringWithLineBreak("Person Moving!");
+                IOService.ShowUserStringWithLineBreak("Person Moving!");
                 Moved = true;
             }
 
             public bool IsMoved()
             {
-                ConsoleIOService.ShowUserStringWithLineBreak("IsMoved PersonClass");
+                IOService.ShowUserStringWithLineBreak("IsMoved PersonClass");
                 return Moved;
             }
         }

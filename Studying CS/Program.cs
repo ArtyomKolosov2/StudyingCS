@@ -11,8 +11,8 @@ namespace Studying_CS
         {
             int partAmount = 5;
             string Command;
-            ConsoleIOService.ShowUserStringWithLineBreak($"Choose part (1-{partAmount.ToString()}):");
-            Command = ConsoleIOService.GetUserString();
+            IOService.ShowUserStringWithLineBreak($"Choose part (1-{partAmount.ToString()}):");
+            Command = IOService.GetUserString();
             switch (Command)
             {
                 case "1":
@@ -34,7 +34,7 @@ namespace Studying_CS
                     LinqStudy.StartExample();
                     break;
                 default:
-                    ConsoleIOService.ShowUserStringWithLineBreak("Error: Incorrect Part!");
+                    IOService.ShowUserStringWithLineBreak("Error: Incorrect Part!");
                     break;
             }
         }

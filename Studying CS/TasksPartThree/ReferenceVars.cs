@@ -10,17 +10,17 @@ namespace TasksPartThree.ReferenceVars
             int a = 2;
             int b = 5;
             ref int result = ref GetGreater(ref a, ref b);
-            ConsoleIOService.ShowUserStringWithLineBreak(result);
+            IOService.ShowUserStringWithLineBreak(result);
             // С C# 7.3 появилась возможность переназначать переменные ссылки
             ref int aRef = ref a;
             // ref int Error; - так делать нельзя!!!
             aRef = 45;
             aRef = ref b;
-            ConsoleIOService.ShowUserStringWithLineBreak(aRef);
+            IOService.ShowUserStringWithLineBreak(aRef);
             int[] numbers = { 1, 2, 3, 4, 5, 6, 7 };
             ref int numberRef = ref Find(4, numbers); // ищем число 4 в массиве
             numberRef = 9; // заменяем 4 на 9
-            ConsoleIOService.ShowUserStringWithLineBreak(numbers[3]); // 9
+            IOService.ShowUserStringWithLineBreak(numbers[3]); // 9
         }
 
         public static ref int GetGreater(ref int n1, ref int n2) // Параметры должны быть определены с мод. ref!!!

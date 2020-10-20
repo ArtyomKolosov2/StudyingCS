@@ -17,7 +17,7 @@ namespace TasksPartThree
             static partial void PartialMethod();
             public static void Move()
             {
-                ConsoleIOService.ShowUserStringWithLineBreak("Move method from PartialClass1.cs file");
+                IOService.ShowUserStringWithLineBreak("Move method from PartialClass1.cs file");
                 PartialMethod();
             }
         }

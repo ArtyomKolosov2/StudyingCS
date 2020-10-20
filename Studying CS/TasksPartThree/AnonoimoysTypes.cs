@@ -11,9 +11,9 @@ namespace TasksPartThree.StudyAnonymous
             var type2 = new { Name = "Ilya", Age = 223 };
             var type3 = new { Name = "Bill", Surname = "Geits", Company = "Microsoft" };
             var type4 = new { simple.SomeNumber };
-            ConsoleIOService.ShowUserStringWithLineBreak($"{type1.GetType()} == {type1.GetType()} = {type1.GetType() == type2.GetType()}");
-            ConsoleIOService.ShowUserStringWithLineBreak($"Type3 = {type3.GetType()}");
-            ConsoleIOService.ShowUserStringWithLineBreak($"Type4 = {type4.GetType()}");
+            IOService.ShowUserStringWithLineBreak($"{type1.GetType()} == {type1.GetType()} = {type1.GetType() == type2.GetType()}");
+            IOService.ShowUserStringWithLineBreak($"Type3 = {type3.GetType()}");
+            IOService.ShowUserStringWithLineBreak($"Type4 = {type4.GetType()}");
         }
     }
     public class SimpleClass

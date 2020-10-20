@@ -13,11 +13,11 @@ namespace TasksPartTwo
                 {
                     int x = 5;
                     int y = x / 0;
-                    ConsoleIOService.ShowUserStringWithLineBreak($"Результат: {y.ToString()}");
+                    IOService.ShowUserStringWithLineBreak($"Результат: {y.ToString()}");
                 }
                 finally
                 {
-                    ConsoleIOService.ShowUserStringWithLineBreak("Блок finally");
+                    IOService.ShowUserStringWithLineBreak("Блок finally");
                 }
             }
             public static void TryCatchWhen()
@@ -27,15 +27,15 @@ namespace TasksPartTwo
 
                 try
                 {
-                    ConsoleIOService.ShowUserStringWithLineBreak(x / y);
+                    IOService.ShowUserStringWithLineBreak(x / y);
                 }
                 catch (DivideByZeroException) when (y == 0)
                 {
-                    ConsoleIOService.ShowUserStringWithLineBreak("y не должен быть равен 0");
+                    IOService.ShowUserStringWithLineBreak("y не должен быть равен 0");
                 }
                 catch (DivideByZeroException ex) when (ex.ToString().Length > 0)
                 {
-                    ConsoleIOService.ShowUserStringWithLineBreak(ex.Message);
+                    IOService.ShowUserStringWithLineBreak(ex.Message);
                 }
             }
 
@@ -48,7 +48,7 @@ namespace TasksPartTwo
                 }
                 catch (OverflowException ofex)
                 {
-                    ConsoleIOService.ShowUserStringWithLineBreak(string.Format(
+                    IOService.ShowUserStringWithLineBreak(string.Format(
                         "InnerException: {0}\n" +
                         "Message: {1}\n" +
                         "Source: {2}\n" +

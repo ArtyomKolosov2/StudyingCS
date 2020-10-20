@@ -9,14 +9,14 @@ namespace TaskPartFour.LazyStudy
         public static void StartExample()
         {
             Lazy<School> school = new Lazy<School>();
-            ConsoleIOService.ShowUserStringWithLineBreak("Input 1 to init lazy class and show data:");
-            if (ConsoleIOService.GetUserString() == "1")
+            IOService.ShowUserStringWithLineBreak("Input 1 to init lazy class and show data:");
+            if (IOService.GetUserString() == "1")
             {
                 school.Value.Show_People();
             }
             else
             {
-                ConsoleIOService.ShowUserStringWithLineBreak("Init skipped!");
+                IOService.ShowUserStringWithLineBreak("Init skipped!");
             }
         }
     }
@@ -27,7 +27,7 @@ namespace TaskPartFour.LazyStudy
         {
             foreach (var person in _people)
             {
-                ConsoleIOService.ShowUserStringWithLineBreak(person);
+                IOService.ShowUserStringWithLineBreak(person);
             }
         }
         public School()

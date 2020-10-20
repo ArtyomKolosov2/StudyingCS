@@ -32,10 +32,10 @@ namespace TasksPartOne
 
             public void show_selled_info()
             {
-                ConsoleIOService.ShowUserStringWithLineBreak("Selled cars: ");
+                IOService.ShowUserStringWithLineBreak("Selled cars: ");
                 foreach (string str in info)
                 {
-                    ConsoleIOService.ShowUserStringWithLineBreak(str);
+                    IOService.ShowUserStringWithLineBreak(str);
                 }
                 Console.Write("\n");
             }
@@ -51,7 +51,7 @@ namespace TasksPartOne
 
             public void show_id_type()
             {
-                ConsoleIOService.ShowUserStringWithLineBreak(string.Format("Тип переменной Id = {0}", Id.GetType()));
+                IOService.ShowUserStringWithLineBreak(string.Format("Тип переменной Id = {0}", Id.GetType()));
             }
         }
     }

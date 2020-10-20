@@ -8,11 +8,11 @@ namespace TasksPartThree
         {
             public static void Drive()
             {
-                ConsoleIOService.ShowUserStringWithLineBreak("Drive method from PartialClass2.cs file");
+                IOService.ShowUserStringWithLineBreak("Drive method from PartialClass2.cs file");
             }
             static partial void PartialMethod()
             {
-                ConsoleIOService.ShowUserStringWithLineBreak("Partial Methdo form PartialClass2.cs file");
+                IOService.ShowUserStringWithLineBreak("Partial Methdo form PartialClass2.cs file");
             }
         }
     }

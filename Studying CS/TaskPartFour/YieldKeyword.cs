@@ -11,11 +11,11 @@ namespace TaskPartFour.YieldStudy
             Library library = new Library();
             foreach (Book book in library)
             {
-                ConsoleIOService.ShowUserStringWithLineBreak($"Take Time = {book.TakeDate.ToString("HH:mm:ss")} Name = {book.Name}");
+                IOService.ShowUserStringWithLineBreak($"Take Time = {book.TakeDate.ToString("HH:mm:ss")} Name = {book.Name}");
             }
             foreach (Person person in library.GetPerson())
             {
-                ConsoleIOService.ShowUserStringWithLineBreak($"Name = {person.Name}, Age = {person.Age.ToString()}");
+                IOService.ShowUserStringWithLineBreak($"Name = {person.Name}, Age = {person.Age.ToString()}");
             }
         }
     }

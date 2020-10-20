@@ -6,7 +6,7 @@ namespace TasksPartThree.LocalFunctionsStudy
     {
         public static void StartExample()
         {
-            ConsoleIOService.ShowUserStringWithLineBreak(GetSum(5, 10));
+            IOService.ShowUserStringWithLineBreak(GetSum(5, 10));
         }
         public static int GetSum(int x, int y)
         {

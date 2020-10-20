@@ -79,12 +79,12 @@ namespace TasksPartTwo
                 add
                 {
                     _SellNotify += value;
-                    ConsoleIOService.ShowUserStringWithLineBreak($"{value.Method.Name} added!");
+                    IOService.ShowUserStringWithLineBreak($"{value.Method.Name} added!");
                 }
                 remove
                 {
                     _SellNotify -= value;
-                    ConsoleIOService.ShowUserStringWithLineBreak($"{value.Method.Name} removed! Now messages will not shown!");
+                    IOService.ShowUserStringWithLineBreak($"{value.Method.Name} removed! Now messages will not shown!");
                 }
             }
 
@@ -129,8 +129,8 @@ namespace TasksPartTwo
 
             private static void ShowEventInfo(object sender, ShopEventsArgs e)
             {
-                ConsoleIOService.ShowUserStringWithLineBreak(e.Message);
-                ConsoleIOService.ShowUserStringWithLineBreak(e.soldCar);
+                IOService.ShowUserStringWithLineBreak(e.Message);
+                IOService.ShowUserStringWithLineBreak(e.soldCar);
             }
         }
     }

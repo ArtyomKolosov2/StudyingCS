@@ -16,13 +16,13 @@ namespace TaskPartFour.SpanStudy
             Span<int> mySpan = temperatures;
             foreach (var sp in mySpan)
             {
-                ConsoleIOService.ShowUserStringWithLineBreak(sp);
+                IOService.ShowUserStringWithLineBreak(sp);
             }
             Span<int> slice = mySpan.Slice(0, 10);
-            ConsoleIOService.ShowUserStringWithLineBreak(mySpan[0]);
-            ConsoleIOService.ShowUserStringWithLineBreak(slice[0]);
+            IOService.ShowUserStringWithLineBreak(mySpan[0]);
+            IOService.ShowUserStringWithLineBreak(slice[0]);
             mySpan[0] = 55555;
-            ConsoleIOService.ShowUserStringWithLineBreak(slice[0]); // ref T this[int index] in action
+            IOService.ShowUserStringWithLineBreak(slice[0]); // ref T this[int index] in action
         }
 
     }
