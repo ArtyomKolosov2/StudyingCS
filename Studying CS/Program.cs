@@ -9,10 +9,10 @@ namespace Studying_CS
     {
         static void Main()
         {
-            int partAmount = 5;
+            int partAmount = 6;
             string Command;
-            IOService.ShowUserStringWithLineBreak($"Choose part (1-{partAmount.ToString()}):");
-            Command = IOService.GetUserString();
+            IOService.ShowUserStringWithLineBreak($"Choose part 1-{partAmount}, 5-(reflection), 6-(LINQ):");
+            Command = IOService.GetUserString().ToLower();
             switch (Command)
             {
                 case "1":

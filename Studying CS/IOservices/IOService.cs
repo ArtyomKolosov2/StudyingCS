@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 
 namespace Studying_CS.IOservices
 {
@@ -23,6 +24,11 @@ namespace Studying_CS.IOservices
             Console.WriteLine(info);
         }
 
+        public static void ShowUserStringWithOutLineBreak(object obj)
+        {
+            Console.Write(obj);
+        }
+
         public static void ShowUserStringWithOutLineBreak(string info)
         {
             Console.Write(info);
@@ -31,6 +37,23 @@ namespace Studying_CS.IOservices
         public static void ShowUserStringWithLineBreak(object obj)
         {
             Console.WriteLine(obj);
+        }
+
+        public static void ShowCollectionWithLineBreak(IEnumerable collection)
+        {
+            foreach (var element in collection)
+            {
+                ShowUserStringWithLineBreak(element);
+            }
+        }
+
+        public static void ShowCollectionWithSplitter(IEnumerable collection, string splitter=" ")
+        {
+            foreach (var element in collection)
+            {
+                ShowUserStringWithOutLineBreak($"{element}{splitter}");
+            }
+            ShowUserStringWithOutLineBreak("\n");
         }
     }
 }

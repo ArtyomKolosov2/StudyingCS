@@ -101,7 +101,32 @@ namespace Studying_CS.LINQ
                     $"Population: {res.Population}, "
                     );
             }
-            Program.center(amount, "New example", split);
+            Program.center(amount, "Except linq", split);
+            string[] soft = { "Microsoft", "Google", "Apple" };
+            string[] hard = { "Apple", "IBM", "Samsung" };
+            var exceptResult = soft.Except(hard);
+            IOService.ShowCollectionWithLineBreak(exceptResult);
+            Program.center(amount, "Intersect linq", split);
+            var intersectResult = soft.Intersect(hard);
+            IOService.ShowCollectionWithLineBreak(intersectResult);
+            Program.center(amount, "Union linq", split);
+            var unionResult = soft.Union(hard);
+            IOService.ShowCollectionWithLineBreak(unionResult);
+            Program.center(amount, "Concat linq", split);
+            var concatResult = soft.Concat(hard);
+            IOService.ShowCollectionWithLineBreak(concatResult);
+            Program.center(amount, "Aggregate", split);
+            int [] intArray = { 1, 2, 3, 4, 5 };
+            int aggregateResult = intArray.Aggregate((a, b) => a * b);
+            IOService.ShowUserStringWithOutLineBreak("intArray = ");
+            IOService.ShowCollectionWithSplitter(intArray);
+            IOService.ShowUserStringWithLineBreak($"1*2*3*4*5 = {aggregateResult}");
+            Program.center(amount, "Sum, Max, Min, Average", split);
+            IOService.ShowUserStringWithLineBreak($"Sum of intArray = {intArray.Sum()}");
+            IOService.ShowUserStringWithLineBreak($"Max of intArray = {intArray.Max()}");
+            IOService.ShowUserStringWithLineBreak($"Min of intArray = {intArray.Min()}");
+            IOService.ShowUserStringWithLineBreak($"Average of intArray = {intArray.Average()}");
+            IOService.ShowUserStringWithLineBreak($"Average of cities population = {Cities.Average(x => x.Population)}");
         }
     }
 }
