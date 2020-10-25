@@ -127,6 +127,17 @@ namespace Studying_CS.LINQ
             IOService.ShowUserStringWithLineBreak($"Min of intArray = {intArray.Min()}");
             IOService.ShowUserStringWithLineBreak($"Average of intArray = {intArray.Average()}");
             IOService.ShowUserStringWithLineBreak($"Average of cities population = {Cities.Average(x => x.Population)}");
+            Program.center(amount, "Skip, Take, TakeWhile, SkipWhile", split);
+            var skipRes = intArray.Skip(3);
+            IOService.ShowCollectionWithLineBreak(skipRes);
+            var takeRes = intArray.Skip(2);
+            IOService.ShowCollectionWithLineBreak(takeRes);
+            var takeWhileRes = intArray.TakeWhile(x => x % 2 != 0);
+            IOService.ShowUserStringWithLineBreak("Take while x % 2 != 0");
+            IOService.ShowCollectionWithLineBreak(takeWhileRes);
+            var skipWhileRes = intArray.SkipWhile(x => x % 2 == 0);
+            IOService.ShowUserStringWithLineBreak("Skip while x % 2 == 0");
+            IOService.ShowCollectionWithLineBreak(skipWhileRes);
         }
     }
 }
