@@ -12,6 +12,13 @@ namespace Studying_CS.LINQ
             public int Population { get; set; }
             public string Name { get; set; }
         }
+
+        public class Car
+        {
+            public int Price { get; set; }
+            public string Company { get; set; }
+            public int Age { get; set; }
+        }
         public static void StartExample()
         {
             int amount = 50;
@@ -138,6 +145,44 @@ namespace Studying_CS.LINQ
             var skipWhileRes = intArray.SkipWhile(x => x % 2 == 0);
             IOService.ShowUserStringWithLineBreak("Skip while x % 2 == 0");
             IOService.ShowCollectionWithLineBreak(skipWhileRes);
+            Program.center(amount, "Group By", split);
+            var groupByResult = from city in Cities
+                                orderby city.Age
+                                group city by city.Age;
+            foreach (var group in groupByResult)
+            {
+                IOService.ShowUserStringWithLineBreak(group.Key);
+                foreach (var t in group)
+                {
+                    IOService.ShowUserStringWithLineBreak(t.Name);
+                }
+            }
+            var cars = new Car[]
+            {
+                new Car{Price=10000, Company="Ford", Age=10},
+                new Car{Price=10000, Company="Opel", Age=2},
+                new Car{Price=10000, Company="Audi", Age=10},
+                new Car{Price=1000, Company="Ford", Age=4},
+                new Car{Price=23000, Company="Audi", Age=12},
+                new Car{Price=145000, Company="Ferrari", Age=10},
+                new Car{Price=1030, Company="Ford", Age=9},
+                new Car{Price=12100, Company="Opel", Age=24},
+                new Car{Price=121020, Company="Ferrari", Age=24}
+            };
+            var carsOrderByRes = from car in cars
+                                 orderby car.Age
+                                 group car by car.Company into p
+                                 select new { Name = p.Key, Count = p.Count() };
+            var carsOrderByResAlternate = cars.GroupBy(p => p.Company)
+                        .Select(g => new { Name = g.Key, Count = g.Count() });
+            foreach (var group in carsOrderByRes)
+            {
+                IOService.ShowUserStringWithLineBreak($"{group.Name} : {group.Count}");
+            }
+            foreach (var group in carsOrderByResAlternate)
+            {
+                IOService.ShowUserStringWithLineBreak($"{group.Name} : {group.Count}");
+            }
         }
     }
 }
