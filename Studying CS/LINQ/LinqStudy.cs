@@ -4,21 +4,30 @@ using System.Linq;
 
 namespace Studying_CS.LINQ
 {
+    public class City
+    {
+        public int Age { get; set; }
+        public int Population { get; set; }
+        public string Name { get; set; }
+    }
+
+    public class Car
+    {
+        public int Price { get; set; }
+        public string Company { get; set; }
+        public int Age { get; set; }
+    }
+
+    public class Citizen
+    {
+        public string Name { get; set; }
+        public int Age { get; set; }
+        public string HomeTownName { get; set; }
+
+    }
     public static class LinqStudy
     {
-        public class City
-        {
-            public int Age { get; set; }
-            public int Population { get; set; }
-            public string Name { get; set; }
-        }
-
-        public class Car
-        {
-            public int Price { get; set; }
-            public string Company { get; set; }
-            public int Age { get; set; }
-        }
+        
         public static void StartExample()
         {
             int amount = 50;
@@ -182,6 +191,62 @@ namespace Studying_CS.LINQ
             foreach (var group in carsOrderByResAlternate)
             {
                 IOService.ShowUserStringWithLineBreak($"{group.Name} : {group.Count}");
+            }
+            Program.center(amount, "Join, GroupJoin, Zip", split);
+            var citizens = new Citizen[]
+            {
+                new Citizen{HomeTownName="Minsk", Name="Vasya"},
+                new Citizen{HomeTownName="Orsha", Name="Vanya"},
+                new Citizen{HomeTownName="Orsha", Name="Ilya"},
+                new Citizen{HomeTownName="Vitebsk", Name="Anna"},
+                new Citizen{HomeTownName="Soligorsk", Name="Petya"},
+                new Citizen{HomeTownName="Soligorsk", Name="Egor"},
+            };
+            var joinRes1 = from citizen in citizens
+                          join city in Cities on citizen.HomeTownName equals city.Name
+                          orderby city.Name
+                          select new { CityName = city.Name, CitizenName = citizen.Name };
+            var joinRes2 = citizens.Join(Cities,
+             p => p.HomeTownName,
+             t => t.Name,
+             (p, t) => new { CityName = t.Name, CitizenName = p.Name });
+            foreach (var res in joinRes1)
+            {
+                IOService.ShowUserStringWithLineBreak($"{res.CitizenName} lives in {res.CityName}");
+            }
+            IOService.ShowUserStringWithLineBreak("LIQN extension");
+            foreach (var res in joinRes2)
+            {
+                IOService.ShowUserStringWithLineBreak($"{res.CitizenName} lives in {res.CityName}");
+            }
+            var joinRes3 = Cities.GroupJoin(citizens,
+                t => t.Name,
+                c => c.HomeTownName,
+                (c, t) => new
+                {
+                    Name = c.Name,
+                    Population = c.Population,
+                    Citizens = t.Select(p => p.Name)
+                });
+            foreach (var res in joinRes3)
+            {
+                IOService.ShowUserStringWithLineBreak(res.Name);
+                foreach (var info in res.Citizens)
+                {
+                    IOService.ShowUserStringWithLineBreak(info);
+                }
+                IOService.ShowUserStringWithOutLineBreak("\n\n");
+            }
+            var zipRes = strings.Zip(
+                soft,
+                (name, companie) => new
+                {
+                    Name = name,
+                    Companie = companie
+                });
+            foreach (var worker in zipRes)
+            {
+                IOService.ShowUserStringWithLineBreak($"{worker.Name} works in {worker.Companie}");
             }
         }
     }
