@@ -1,5 +1,3 @@
 # Studying CS
-This repository contains some intresting C# (.Net class library) examples. 
+A project which contains a lot of C#. Code was written by me as a part of my educational process. Thanks to this approach, I was able to learn the features and details of the C# language and the .NET platform 
 
-All examples were coded by myself. 
-# I'll hope you find them useful!
